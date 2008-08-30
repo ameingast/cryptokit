@@ -1,0 +1,4 @@
+20.08.2006:
+        * additional support for md2, md4, rmd160 and sha0
+        * introduced `NSFileHandle' category
+        * moved all crypto stuff from low-level openssl-functions (e.g. MD5(,,)) to the EVP abstraction layer.
