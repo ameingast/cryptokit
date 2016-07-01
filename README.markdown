@@ -1,6 +1,6 @@
 # CryptoKit
 
-[![Build Status](https://api.travis-ci.org/ameingast/CryptoKit.png)](https://travis-ci.org/ameingast/CryptoKit)
+[![Build Status](https://api.travis-ci.org/ameingast/cryptokit.png)](https://travis-ci.org/ameingast/CryptoKit)
 
 Welcome to *CryptoKit*, a framework making cryptography easier on macOS and iOS.
 

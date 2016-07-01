@@ -26,9 +26,6 @@
 		CA33AFF41D09B2EC003803B4 /* CryptoKitEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA33AFF51D09B2EF003803B4 /* CryptoKitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE83BAE1D09427F000D0DCD /* CryptoKitEngine.m */; };
 		CA33AFF81D09B44E003803B4 /* CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA33AFF61D09B44E003803B4 /* CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA531ED51D1E649D00F3F3E3 /* .clang-format in Resources */ = {isa = PBXBuildFile; fileRef = CA531ED41D1E649D00F3F3E3 /* .clang-format */; };
-		CA531ED81D1E64B500F3F3E3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA531ED61D1E64B500F3F3E3 /* .gitignore */; };
-		CA531ED91D1E64B500F3F3E3 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = CA531ED71D1E64B500F3F3E3 /* .travis.yml */; };
 		CA550F641D09C61700EC74DB /* CryptoKitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE83BAE1D09427F000D0DCD /* CryptoKitEngine.m */; };
 		CA550F651D09C61B00EC74DB /* CryptoKitEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA550F7D1D09C67C00EC74DB /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA33AFEA1D09B2CF003803B4 /* CryptoKit.framework */; };
@@ -476,9 +473,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA531ED91D1E64B500F3F3E3 /* .travis.yml in Resources */,
-				CA531ED81D1E64B500F3F3E3 /* .gitignore in Resources */,
-				CA531ED51D1E649D00F3F3E3 /* .clang-format in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
