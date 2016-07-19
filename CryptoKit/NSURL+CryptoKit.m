@@ -155,4 +155,20 @@
     return result;
 }
 
+- (BOOL)recryptedURLWithPassword:(NSString *)password
+                     newPassword:(NSString *)newPassword
+                       targetURL:(NSURL *)targetURL
+                           error:(NSError *__autoreleasing *)error
+{
+    NSInputStream *inputStream = [NSInputStream inputStreamWithURL:self];
+    NSOutputStream *outputStream = [NSOutputStream outputStreamWithURL:targetURL
+                                                                append:NO];
+    BOOL result = [NSStream recryptInputStream:inputStream
+                                toOutputStream:outputStream
+                                      password:password
+                                   newPassword:newPassword
+                                         error:error];
+    return result;
+}
+
 @end

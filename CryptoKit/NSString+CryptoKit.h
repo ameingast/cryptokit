@@ -6,11 +6,11 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface NSString (CococaCryptoHashing)
+@import Foundation;
 
 NS_ASSUME_NONNULL_BEGIN
+
+@interface NSString (CococaCryptoHashing)
 
 #pragma mark - Digests
 
@@ -20,8 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)md2Hash;
 
 /**
- * Generate the MD2 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the MD2 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)md2HexHash;
 
@@ -31,8 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)md4Hash;
 
 /**
- * Generate the MD4 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the MD4 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)md4HexHash;
 
@@ -42,8 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)md5Hash;
 
 /**
- * Generate the MD5 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the MD5 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)md5HexHash;
 
@@ -53,8 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)sha1Hash;
 
 /**
- * Generate the SHA1 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the SHA1 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)sha1HexHash;
 
@@ -64,8 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)sha224Hash;
 
 /**
- * Generate the SHA224 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the SHA224 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)sha224HexHash;
 
@@ -75,8 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)sha384Hash;
 
 /**
- * Generate the SHA384 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the SHA384 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)sha384HexHash;
 
@@ -86,11 +80,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *)sha512Hash;
 
 /**
- * Generate the SHA512 digest of the NSString instance 
- * in a human readable NSString representation.
+ * Generate the SHA512 digest of the NSString instance in a human readable NSString representation.
  */
 - (NSString *)sha512HexHash;
 
-NS_ASSUME_NONNULL_END
-
 @end
+
+NS_ASSUME_NONNULL_END

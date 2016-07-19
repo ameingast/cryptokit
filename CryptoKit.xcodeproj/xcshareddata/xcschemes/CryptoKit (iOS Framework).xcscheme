@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (iOS)"
+               BlueprintName = "CryptoKitTests (iOS Framework)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +40,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -48,7 +49,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (iOS)"
+               BlueprintName = "CryptoKitTests (iOS Framework)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

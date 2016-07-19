@@ -6,8 +6,15 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import <CryptoKit/CryptoKitEngine.h>
 #import <CryptoKit/NSInputStream+CryptoKit.h>
+
+#import "CryptoKitEngine.h"
+
+@interface NSInputStream (CryptoKitPrivate)
+
+- (CryptoKitEngine *)engine;
+
+@end
 
 @implementation NSInputStream (CryptoKit)
 
@@ -15,92 +22,141 @@
 
 - (NSData *)md2Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeMD2, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeMD2
+                                            error:error];
     return result;
 }
 
 - (NSString *)md2HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self md2Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeMD2);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeMD2
+                                                                  error:error];
     return result;
 }
 
 - (NSData *)md4Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeMD4, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeMD4
+                                            error:error];
     return result;
 }
 
 - (NSString *)md4HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self md4Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeMD4);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeMD4
+                                                                  error:error];
     return result;
 }
 
 - (NSData *)md5Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeMD5, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeMD5
+                                            error:error];
     return result;
 }
 
 - (NSString *)md5HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self md5Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeMD5);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeMD5
+                                                                  error:error];
     return result;
 }
 
 - (NSData *)sha1Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeSHA1, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeSHA1
+                                            error:error];
     return result;
 }
 
 - (NSString *)sha1HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self sha1Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeSHA1);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeSHA1
+                                                                  error:error];
     return result;
 }
 
 - (NSData *)sha224Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeSHA224, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeSHA224
+                                            error:error];
     return result;
 }
 
 - (NSString *)sha224HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self sha224Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeSHA224);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeSHA224
+                                                                  error:error];
     return result;
 }
 
-- (NSData *)sha384Hash:(NSError *__autoreleasing *)error
+- (nullable NSData *)sha384Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeSHA384, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeSHA384
+                                            error:error];
     return result;
 }
 
 - (NSString *)sha384HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self sha384Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeSHA384);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeSHA384
+                                                                  error:error];
     return result;
 }
 
 - (NSData *)sha512Hash:(NSError *__autoreleasing *)error
 {
-    NSData *result = NSDataWithDigestFromInputStream(self, CryptoKitDigestTypeSHA512, error);
+    NSData *result = [self.engine calculateDigest:self
+                                       digestType:CryptoKitDigestTypeSHA512
+                                            error:error];
     return result;
 }
 
 - (NSString *)sha512HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self sha512Hash:error];
-    NSString *result = NSStringAsDigestFromData(data, CryptoKitDigestTypeSHA512);
+    if (!data) {
+        return nil;
+    }
+    NSString *result = [self.engine digestToHumanReadableRepresentation:data
+                                                             digestType:CryptoKitDigestTypeSHA512
+                                                                  error:error];
     return result;
 }
 
@@ -111,7 +167,10 @@
                       error:(NSError *__autoreleasing *)error
 
 {
-    BOOL result = CryptoKitEncryptStream(self, outputStream, password, error);
+    BOOL result = [self.engine encryptStream:self
+                                outputStream:outputStream
+                                    password:password
+                                       error:error];
     return result;
 }
 
@@ -119,8 +178,34 @@
                    toStream:(NSOutputStream *)outputStream
                       error:(NSError *__autoreleasing *)error
 {
-    BOOL result = CryptoKitDecryptStream(self, outputStream, password, error);
+    BOOL result = [self.engine decryptStream:self
+                                outputStream:outputStream
+                                    password:password
+                                       error:error];
     return result;
+}
+
+- (BOOL)recryptWithPassword:(NSString *)password
+                newPassword:(NSString *)newPassword
+                   toStream:(NSOutputStream *)outputStream
+                      error:(NSError *__nullable *)error
+
+{
+    BOOL result = [self.engine recryptInputStream:self
+                                   toOutputStream:outputStream
+                                         password:password
+                                      newPassword:newPassword
+                                            error:error];
+    return result;
+}
+
+@end
+
+@implementation NSInputStream (CryptoKitPrivate)
+
+- (CryptoKitEngine *)engine
+{
+    return [CryptoKitEngine sharedInstance];
 }
 
 @end

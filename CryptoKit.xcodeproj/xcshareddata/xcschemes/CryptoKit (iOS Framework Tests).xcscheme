@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
+               BuildableName = "CryptoKitTests.xctest"
+               BlueprintName = "CryptoKitTests (iOS Framework)"
+               ReferencedContainer = "container:CryptoKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -19,7 +35,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (iOS)"
+               BlueprintName = "CryptoKitTests (iOS Framework)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -37,6 +53,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
+            BuildableName = "CryptoKitTests.xctest"
+            BlueprintName = "CryptoKitTests (iOS Framework)"
+            ReferencedContainer = "container:CryptoKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -6,6 +6,9 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
+@import Foundation;
+
+#import <CryptoKit/CryptoKitErrors.h>
 #import <CryptoKit/NSData+CryptoKit.h>
 #import <CryptoKit/NSInputStream+CryptoKit.h>
 #import <CryptoKit/NSStream+CryptoKit.h>
