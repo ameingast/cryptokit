@@ -48,9 +48,9 @@
                         withBytes:[dataToRead bytes]];
         totalBytesRead += (NSUInteger)bytesRead;
         if (bytesRead == 0) {
-            NSString *reason = [NSString stringWithFormat:@"End of stream reached with bytes consumed: %ld, "
-                                                           "bytes expected: %ld",
-                                                          totalBytesRead, bytesToRead];
+            NSString *reason = [NSString stringWithFormat:@"End of stream reached with bytes consumed: %@, "
+                                                           "bytes expected: %@",
+                                                          @(totalBytesRead), @(bytesToRead)];
             @throw [NSException exceptionWithName:CryptoKitErrorDomain
                                            reason:reason
                                          userInfo:@{ @"errorCode": @(CryptoKitIOError) }];

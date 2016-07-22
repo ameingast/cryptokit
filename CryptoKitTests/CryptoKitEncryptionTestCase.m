@@ -6,9 +6,6 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import <CryptoKit/CryptoKit.h>
-#import <CryptoKit/CryptoKitErrors.h>
-
 #import "CryptoKitBaseTestCase.h"
 #import "CryptoKitEngine+Keys.h"
 

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
+@import CryptoKit;
 @import Foundation;
 @import XCTest;
 

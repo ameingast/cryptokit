@@ -6,9 +6,6 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import <CryptoKit/CryptoKit.h>
-#import <CryptoKit/CryptoKitErrors.h>
-
 #import "CryptoKitBaseTestCase.h"
 
 static NSString *const CryptoKitTestsInputExpectedMD2 = @"b397b0941b13002609e2c6e1e57c5749";

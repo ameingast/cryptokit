@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (iOS Framework)"
+               BlueprintName = "CryptoKit (iOS Framework Tests)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,7 +35,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (iOS Framework)"
+               BlueprintName = "CryptoKit (iOS Framework Tests)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA550F771D09C67C00EC74DB"
             BuildableName = "CryptoKitTests.xctest"
-            BlueprintName = "CryptoKitTests (iOS Framework)"
+            BlueprintName = "CryptoKit (iOS Framework Tests)"
             ReferencedContainer = "container:CryptoKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

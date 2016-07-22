@@ -35,7 +35,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA33AFD81D09B050003803B4"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKitTests (macOS Framework)"
+               BlueprintName = "CryptoKit (macOS Framework Tests)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

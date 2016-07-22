@@ -5,37 +5,20 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA33AFD81D09B050003803B4"
-               BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKit (macOS Framework Tests)"
-               ReferencedContainer = "container:CryptoKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA33AFD81D09B050003803B4"
+               BlueprintIdentifier = "CA68F7461D42951D005D081A"
                BuildableName = "CryptoKitTests.xctest"
-               BlueprintName = "CryptoKit (macOS Framework Tests)"
+               BlueprintName = "CryptoKit (watchOS Framework Tests)"
                ReferencedContainer = "container:CryptoKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -53,15 +36,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CA33AFD81D09B050003803B4"
-            BuildableName = "CryptoKitTests.xctest"
-            BlueprintName = "CryptoKit (macOS Framework Tests)"
-            ReferencedContainer = "container:CryptoKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
