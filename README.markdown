@@ -2,14 +2,13 @@
 
 [![Build Status](https://api.travis-ci.org/ameingast/cryptokit.png)](https://travis-ci.org/ameingast/CryptoKit)
 
-Welcome to *CryptoKit*, a framework making cryptography easier and safer on macOS and iOS.
+Welcome to *CryptoKit*, a framework making cryptography easier and safer on macOS, iOS, tvOS and watchOS.
 
 ## Rationale 
 
-CryptoKit is an open source cryptographic framework designed to make cryptography operations on macOS and iOS easier
-and safer.
+CryptoKit is an open source cryptographic framework designed to make cryptography operations on easier and safer.
 
-Encryption and digest calculation using the core macOS/iOS frameworks is everything but trivial. CommonCrypto is 
+Encryption and digest calculation using the core Foundation frameworks is everything but trivial. CommonCrypto is 
 notoriously low-level, inconvenient to use from Swift and Objective-C and its error handling is ambiguous.
 
 Cryptography is easy to get wrong. Chosing the correct cipher, composing cryptographic operations in a correct manner 
@@ -44,7 +43,12 @@ Encryption and decryption rely on a custom data format providing means to ensure
 
 ### Requirements
 
-CryptoKit requires either iOS 8.0 or macOS 10.6.
+CryptoKit requires at least: 
+
+* iOS 8.0
+* macOS 10.6
+* tvOS 9.0
+* watchOS 2.0
 
 ### Installation with CocoaPods
 
