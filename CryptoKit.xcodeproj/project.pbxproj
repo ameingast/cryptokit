@@ -387,6 +387,7 @@
 		CAACCDC91D2C17DF003FFDF2 /* CryptoKitMessageTrailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoKitMessageTrailer.m; sourceTree = "<group>"; };
 		CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CryptoKitEngine.h; path = CryptoKit/CryptoKitEngine.h; sourceTree = SOURCE_ROOT; };
 		CAE83BAE1D09427F000D0DCD /* CryptoKitEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CryptoKitEngine.m; path = CryptoKit/CryptoKitEngine.m; sourceTree = SOURCE_ROOT; };
+		CAEE01331D49E5AE009F3E52 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		CAFDED641D0C1A7000CC9C6E /* NSURL+CryptoKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+CryptoKit.h"; path = "CryptoKit/NSURL+CryptoKit.h"; sourceTree = SOURCE_ROOT; };
 		CAFDED651D0C1A7000CC9C6E /* NSURL+CryptoKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+CryptoKit.m"; path = "CryptoKit/NSURL+CryptoKit.m"; sourceTree = SOURCE_ROOT; };
 		CAFDED6E1D0C1BF200CC9C6E /* NSStream+CryptoKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSStream+CryptoKit.h"; path = "CryptoKit/NSStream+CryptoKit.h"; sourceTree = SOURCE_ROOT; };
@@ -508,6 +509,7 @@
 		0867D691FE84028FC02AAC07 /* CryptoKit */ = {
 			isa = PBXGroup;
 			children = (
+				CAEE01331D49E5AE009F3E52 /* Playground.playground */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				CA33AFE41D09B1E5003803B4 /* Resources */,
 				CA2E13D40A90A482007AB558 /* Sources */,
@@ -566,8 +568,8 @@
 				CA531ED71D1E64B500F3F3E3 /* .travis.yml */,
 				CAFDED7B1D0C471F00CC9C6E /* CryptoKit.podspec.json */,
 				CA526ACE1D2BDB9E00EE0C1F /* EncryptedFileV1.bin */,
-				CA33AFDD1D09B051003803B4 /* Info.plist */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				CA33AFDD1D09B051003803B4 /* Info.plist */,
 				CAA592191D0B18930055AEFA /* LICENSE */,
 				CAA5921A1D0B18930055AEFA /* README.markdown */,
 			);
