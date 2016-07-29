@@ -7,7 +7,7 @@
     "license": { "type": "BSD3", "file": "LICENSE" },
     "authors": { "Andreas Meingast": "ameingast@gmail.com" },
     "source": { "git": "https://github.com/ameingast/cryptokit.git", "tag": "1.1.0" },
-    "platforms": { "osx": "10.6", "ios": "8.0" },
+    "platforms": { "osx": "10.6", "ios": "8.0", "tvos": "9.0", "watchos": "2.0" },
     "requires_arc": true,
     "frameworks": [ "Foundation" ],
     "source_files": "CryptoKit/*.{h,m}",
