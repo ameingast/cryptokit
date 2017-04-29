@@ -1,6 +1,7 @@
 # CryptoKit
 
-[![Build Status](https://api.travis-ci.org/ameingast/cryptokit.png)](https://travis-ci.org/ameingast/CryptoKit)
+[![Build Status](https://api.travis-ci.org/ameingast/cryptokit.png)](https://travis-ci.org/ameingast/cryptokit)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Welcome to *CryptoKit*, a framework making cryptography easier and safer on macOS, iOS, tvOS and watchOS.
 
