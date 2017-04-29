@@ -1,4 +1,4 @@
 osx_image: xcode8
 language: objective-c
-xcode_project: CryptoKit.xcodeproj
-xcode_scheme: CryptoKit (macOS Static Library)
+script: 
+  - xcodebuild -scheme CryptoKit\ \(macOS\ Static\ Library\) build
