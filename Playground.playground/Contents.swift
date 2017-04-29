@@ -3,14 +3,14 @@ import CryptoKit
 
 // MARK: Encryption
 do {
-    if let data = "Secret Text".dataUsingEncoding(NSUTF8StringEncoding) {
-        let encrypted = try data.encryptedDataWithPassword("secret")
-        let decrypted = try encrypted.decryptedDataWithPassword("secret")
-        let plain = String.init(data: decrypted, encoding: NSUTF8StringEncoding);
+    if let data = "Secret Text".data(using: String.Encoding.utf8) as NSData? {
+        let encrypted = try data.encryptedData(withPassword: "secret") as NSData
+        let decrypted = try encrypted.decryptedData(withPassword: "secret") as NSData
+        let plain = String.init(data: decrypted as Data, encoding: String.Encoding.utf8);
 
-        let recrypted = try encrypted.recryptDataWithPassword("secret", newPassword: "newSecret")
-        let recryptDecrypted = try recrypted.decryptedDataWithPassword("newSecret")
-        let recryptedPlain = String.init(data: recryptDecrypted, encoding: NSUTF8StringEncoding)
+        let recrypted = try encrypted.recryptData(withPassword: "secret", newPassword: "newSecret") as NSData
+        let recryptDecrypted = try recrypted.decryptedData(withPassword: "newSecret") as NSData
+        let recryptedPlain = String.init(data: recryptDecrypted as Data, encoding: String.Encoding.utf8)
     }
 } catch {
     print(error)
@@ -19,4 +19,3 @@ do {
 // MARK: Digests
 let md5Hash = "123".md5HexHash()
 let sha512Hash = "123".sha512HexHash()
-

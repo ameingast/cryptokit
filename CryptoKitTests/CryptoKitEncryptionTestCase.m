@@ -98,7 +98,7 @@
               NSData *decryptedData = [encryptedData decryptedDataWithPassword:CryptoKitPassword
                                                                          error:&decryptionError];
               XCTAssertNotNil(decryptedData);
-              XCTAssertEqualObjects(data, decryptedData, @"Payload size: %ld - %@", i, decryptionError);
+              XCTAssertEqualObjects(data, decryptedData, @"Payload size: %lu - %@", (unsigned long)i, decryptionError);
           } @finally {
               dispatch_group_leave(group);
           }
