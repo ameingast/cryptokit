@@ -188,7 +188,7 @@
 - (BOOL)recryptWithPassword:(NSString *)password
                 newPassword:(NSString *)newPassword
                    toStream:(NSOutputStream *)outputStream
-                      error:(NSError *__nullable *)error
+                      error:(NSError *__nullable __autoreleasing *)error
 
 {
     BOOL result = [self.engine recryptInputStream:self

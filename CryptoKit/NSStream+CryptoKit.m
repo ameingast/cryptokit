@@ -13,7 +13,7 @@
 
 @interface NSStream (CryptoKitPrivate)
 
-- (id)withOpenStream:(id (^)())callback;
+- (id)withOpenStream:(id (^)(void))callback;
 
 @end
 
@@ -189,7 +189,7 @@
             toOutputStream:(NSOutputStream *)outputStream
                   password:(NSString *)password
                newPassword:(NSString *)newPassword
-                     error:(NSError *__nullable *)error
+                     error:(NSError *__nullable __autoreleasing *)error
 {
     BOOL __block result = NO;
     [inputStream withOpenStream:^id {
@@ -211,7 +211,7 @@
 
 @implementation NSStream (CryptoKitPrivate)
 
-- (id)withOpenStream:(id (^)())callback
+- (id)withOpenStream:(id (^)(void))callback
 {
     NSStreamStatus initialStatus = [self streamStatus];
     @try {
