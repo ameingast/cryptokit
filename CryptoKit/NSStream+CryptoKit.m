@@ -147,6 +147,15 @@
     return result;
 }
 
++ (CKDigestBatchResult *)hashesForInputStream:(NSInputStream *)inputStream
+                                                                error:(NSError *__autoreleasing *)error
+{
+    CKDigestBatchResult *result = [inputStream withOpenStream:^id{
+        return [inputStream hashes:error];
+    }];
+    return result;
+}
+
 #pragma mark + Encryption
 
 + (BOOL)encryptInputStream:(NSInputStream *)inputStream

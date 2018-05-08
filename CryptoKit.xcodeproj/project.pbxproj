@@ -34,14 +34,10 @@
 		CA3DFE371D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
 		CA3DFE381D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
 		CA3DFE391D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
-		CA3DFE461D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
-		CA3DFE471D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
+		CA3DFE461D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA3DFE471D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DFE481D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
 		CA3DFE491D295F0E00E16C91 /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
-		CA3DFE4A1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
-		CA3DFE4B1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
-		CA3DFE4C1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
-		CA3DFE4D1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
 		CA526AC01D2BC8D400EE0C1F /* CryptoKitDigestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA526ABF1D2BC8D400EE0C1F /* CryptoKitDigestTestCase.m */; };
 		CA526AC11D2BC8D400EE0C1F /* CryptoKitDigestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA526ABF1D2BC8D400EE0C1F /* CryptoKitDigestTestCase.m */; };
 		CA526AC41D2BC95000EE0C1F /* CryptoKitBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA526AC31D2BC95000EE0C1F /* CryptoKitBaseTestCase.m */; };
@@ -51,13 +47,16 @@
 		CA550F641D09C61700EC74DB /* CryptoKitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE83BAE1D09427F000D0DCD /* CryptoKitEngine.m */; };
 		CA550F651D09C61B00EC74DB /* CryptoKitEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */; };
 		CA550F831D09C6B600EC74DB /* CryptoKitEncryptionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9A55431D09BA2D0011FC22 /* CryptoKitEncryptionTestCase.m */; };
+		CA65830420964B03002E2D0D /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */; };
+		CA65830520964B03002E2D0D /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */; };
+		CA65830620964B03002E2D0D /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */; };
+		CA65830720964B03002E2D0D /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */; };
 		CA68F68D1D4292FB005D081A /* NSURL+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFDED651D0C1A7000CC9C6E /* NSURL+CryptoKit.m */; };
 		CA68F68E1D4292FB005D081A /* CryptoKitEngine+Digests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73056A1D2B94F200F5F821 /* CryptoKitEngine+Digests.m */; };
 		CA68F68F1D4292FB005D081A /* NSInputStream+CryptoKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68F71C1D38D01600C4599B /* NSInputStream+CryptoKitPrivate.m */; };
 		CA68F6901D4292FB005D081A /* NSData+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06FD1D0AB86100C39B19 /* NSData+CryptoKit.m */; };
 		CA68F6911D4292FB005D081A /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
 		CA68F6921D4292FB005D081A /* NSStream+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFDED6F1D0C1BF200CC9C6E /* NSStream+CryptoKit.m */; };
-		CA68F6931D4292FB005D081A /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
 		CA68F6941D4292FB005D081A /* NSString+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06F41D0AB79D00C39B19 /* NSString+CryptoKit.m */; };
 		CA68F6951D4292FB005D081A /* CryptoKitEngine+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73057E1D2B9E2400F5F821 /* CryptoKitEngine+Encryption.m */; };
 		CA68F6961D4292FB005D081A /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
@@ -74,8 +73,7 @@
 		CA68F6A31D4292FB005D081A /* CryptoKitEngine+Keys.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305911D2B9EAE00F5F821 /* CryptoKitEngine+Keys.h */; };
 		CA68F6A41D4292FB005D081A /* CryptoKitEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */; };
 		CA68F6A51D4292FB005D081A /* CryptoKitMessageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE301D295E3200E16C91 /* CryptoKitMessageHeader.h */; };
-		CA68F6A61D4292FB005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
-		CA68F6A71D4292FB005D081A /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA68F6A61D4292FB005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F6A81D4292FB005D081A /* NSString+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B06F31D0AB79D00C39B19 /* NSString+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F6A91D4292FB005D081A /* CryptoKitEngine+Digests.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305691D2B94F200F5F821 /* CryptoKitEngine+Digests.h */; };
 		CA68F6AA1D4292FB005D081A /* CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA33AFF61D09B44E003803B4 /* CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,7 +89,6 @@
 		CA68F6BB1D429379005D081A /* CryptoKitEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE83BAE1D09427F000D0DCD /* CryptoKitEngine.m */; };
 		CA68F6BC1D429379005D081A /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
 		CA68F6BD1D429379005D081A /* NSStream+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFDED6F1D0C1BF200CC9C6E /* NSStream+CryptoKit.m */; };
-		CA68F6BE1D429379005D081A /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
 		CA68F6BF1D429379005D081A /* NSData+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06FD1D0AB86100C39B19 /* NSData+CryptoKit.m */; };
 		CA68F6C01D429379005D081A /* CryptoKitEngine+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73057E1D2B9E2400F5F821 /* CryptoKitEngine+Encryption.m */; };
 		CA68F6C11D429379005D081A /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
@@ -109,7 +106,6 @@
 		CA68F6CF1D429379005D081A /* NSURL+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFDED641D0C1A7000CC9C6E /* NSURL+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F6D01D429379005D081A /* CryptoKitMessageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE301D295E3200E16C91 /* CryptoKitMessageHeader.h */; };
 		CA68F6D11D429379005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
-		CA68F6D21D429379005D081A /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F6D31D429379005D081A /* NSString+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B06F31D0AB79D00C39B19 /* NSString+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F6D41D429379005D081A /* CryptoKitEngine+Digests.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305691D2B94F200F5F821 /* CryptoKitEngine+Digests.h */; };
 		CA68F6D51D429379005D081A /* CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA33AFF61D09B44E003803B4 /* CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -129,7 +125,6 @@
 		CA68F6F61D429484005D081A /* NSData+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06FD1D0AB86100C39B19 /* NSData+CryptoKit.m */; };
 		CA68F6F71D429484005D081A /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
 		CA68F6F81D429484005D081A /* NSStream+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFDED6F1D0C1BF200CC9C6E /* NSStream+CryptoKit.m */; };
-		CA68F6F91D429484005D081A /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
 		CA68F6FA1D429484005D081A /* NSString+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06F41D0AB79D00C39B19 /* NSString+CryptoKit.m */; };
 		CA68F6FB1D429484005D081A /* CryptoKitEngine+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73057E1D2B9E2400F5F821 /* CryptoKitEngine+Encryption.m */; };
 		CA68F6FC1D429484005D081A /* CryptoKitMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */; };
@@ -146,8 +141,7 @@
 		CA68F7091D429484005D081A /* CryptoKitEngine+Keys.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305911D2B9EAE00F5F821 /* CryptoKitEngine+Keys.h */; };
 		CA68F70A1D429484005D081A /* CryptoKitEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE83BAD1D09427F000D0DCD /* CryptoKitEngine.h */; };
 		CA68F70B1D429484005D081A /* CryptoKitMessageHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE301D295E3200E16C91 /* CryptoKitMessageHeader.h */; };
-		CA68F70C1D429484005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
-		CA68F70D1D429484005D081A /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA68F70C1D429484005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F70E1D429484005D081A /* NSString+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B06F31D0AB79D00C39B19 /* NSString+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F70F1D429484005D081A /* CryptoKitEngine+Digests.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305691D2B94F200F5F821 /* CryptoKitEngine+Digests.h */; };
 		CA68F7101D429484005D081A /* CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA33AFF61D09B44E003803B4 /* CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -171,7 +165,6 @@
 		CA68F7231D38D01600C4599B /* NSInputStream+CryptoKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68F71C1D38D01600C4599B /* NSInputStream+CryptoKitPrivate.m */; };
 		CA68F7231D4294D3005D081A /* NSStream+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFDED6F1D0C1BF200CC9C6E /* NSStream+CryptoKit.m */; };
 		CA68F7241D38D01600C4599B /* NSInputStream+CryptoKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68F71C1D38D01600C4599B /* NSInputStream+CryptoKitPrivate.m */; };
-		CA68F7241D4294D3005D081A /* CryptoKitTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */; };
 		CA68F7251D4294D3005D081A /* NSData+CryptoKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1B06FD1D0AB86100C39B19 /* NSData+CryptoKit.m */; };
 		CA68F7261D4294D3005D081A /* CryptoKitEngine+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73057E1D2B9E2400F5F821 /* CryptoKitEngine+Encryption.m */; };
 		CA68F7271D38D1F600C4599B /* NSOutputStream+CryptoKitPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = CA68F7251D38D1F600C4599B /* NSOutputStream+CryptoKitPrivate.h */; };
@@ -205,7 +198,6 @@
 		CA68F7371D38D30700C4599B /* NSStream+CryptoKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68F7301D38D30700C4599B /* NSStream+CryptoKitPrivate.m */; };
 		CA68F7371D4294D3005D081A /* CryptoKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */; };
 		CA68F7381D38D30700C4599B /* NSStream+CryptoKitPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA68F7301D38D30700C4599B /* NSStream+CryptoKitPrivate.m */; };
-		CA68F7381D4294D3005D081A /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F7391D4294D3005D081A /* NSString+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA1B06F31D0AB79D00C39B19 /* NSString+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA68F73A1D4294D3005D081A /* CryptoKitEngine+Digests.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7305691D2B94F200F5F821 /* CryptoKitEngine+Digests.h */; };
 		CA68F73B1D4294D3005D081A /* CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA33AFF61D09B44E003803B4 /* CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -246,10 +238,6 @@
 		CA7305981D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
 		CA7305991D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
 		CA73059A1D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */; };
-		CA73059C1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA73059D1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA73059E1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA73059F1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA9A55441D09BA2D0011FC22 /* CryptoKitEncryptionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9A55431D09BA2D0011FC22 /* CryptoKitEncryptionTestCase.m */; };
 		CAA592281D0B27C50055AEFA /* NSInputStream+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA592261D0B27C50055AEFA /* NSInputStream+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAA592291D0B27C50055AEFA /* NSInputStream+CryptoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA592261D0B27C50055AEFA /* NSInputStream+CryptoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -346,7 +334,6 @@
 		CA3DFE301D295E3200E16C91 /* CryptoKitMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoKitMessageHeader.h; sourceTree = "<group>"; };
 		CA3DFE311D295E3200E16C91 /* CryptoKitMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoKitMessageHeader.m; sourceTree = "<group>"; };
 		CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoKitTypes.h; sourceTree = "<group>"; };
-		CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoKitTypes.m; sourceTree = "<group>"; };
 		CA526ABF1D2BC8D400EE0C1F /* CryptoKitDigestTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CryptoKitDigestTestCase.m; path = CryptoKitTests/CryptoKitDigestTestCase.m; sourceTree = SOURCE_ROOT; };
 		CA526AC21D2BC95000EE0C1F /* CryptoKitBaseTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CryptoKitBaseTestCase.h; path = CryptoKitTests/CryptoKitBaseTestCase.h; sourceTree = SOURCE_ROOT; };
 		CA526AC31D2BC95000EE0C1F /* CryptoKitBaseTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CryptoKitBaseTestCase.m; path = CryptoKitTests/CryptoKitBaseTestCase.m; sourceTree = SOURCE_ROOT; };
@@ -357,6 +344,7 @@
 		CA550F5A1D09C5F600EC74DB /* libCryptoKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCryptoKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA550F6B1D09C64300EC74DB /* libCryptoKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCryptoKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA550F781D09C67C00EC74DB /* CryptoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoKitTypes.m; sourceTree = "<group>"; };
 		CA68F6B41D4292FB005D081A /* CryptoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA68F6DF1D429379005D081A /* libCryptoKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCryptoKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA68F6EE1D4293A9005D081A /* CryptoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,7 +363,6 @@
 		CA73057E1D2B9E2400F5F821 /* CryptoKitEngine+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CryptoKitEngine+Encryption.m"; sourceTree = "<group>"; };
 		CA7305911D2B9EAE00F5F821 /* CryptoKitEngine+Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CryptoKitEngine+Keys.h"; sourceTree = "<group>"; };
 		CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CryptoKitEngine+Keys.m"; sourceTree = "<group>"; };
-		CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoKitErrors.h; sourceTree = "<group>"; };
 		CA9A55431D09BA2D0011FC22 /* CryptoKitEncryptionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CryptoKitEncryptionTestCase.m; path = CryptoKitTests/CryptoKitEncryptionTestCase.m; sourceTree = SOURCE_ROOT; };
 		CAA592191D0B18930055AEFA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		CAA5921A1D0B18930055AEFA /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = SOURCE_ROOT; };
@@ -542,7 +529,6 @@
 				CA2499071D0D7BF3009125D5 /* Categories */,
 				CA3DFE2F1D295E1600E16C91 /* Engine */,
 				CA33AFF61D09B44E003803B4 /* CryptoKit.h */,
-				CA73059B1D2BAF5C00F5F821 /* CryptoKitErrors.h */,
 			);
 			name = Sources;
 			path = CryptoKit;
@@ -590,7 +576,7 @@
 				CA7305911D2B9EAE00F5F821 /* CryptoKitEngine+Keys.h */,
 				CA7305921D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m */,
 				CA3DFE441D295F0E00E16C91 /* CryptoKitTypes.h */,
-				CA3DFE451D295F0E00E16C91 /* CryptoKitTypes.m */,
+				CA6582FF20964B03002E2D0D /* CryptoKitTypes.m */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -636,7 +622,6 @@
 				CAFDED701D0C1BF200CC9C6E /* NSStream+CryptoKit.h in Headers */,
 				CA3DFE321D295E3200E16C91 /* CryptoKitMessageHeader.h in Headers */,
 				CA3DFE461D295F0E00E16C91 /* CryptoKitTypes.h in Headers */,
-				CA73059C1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */,
 				CA1B06F51D0AB79D00C39B19 /* NSString+CryptoKit.h in Headers */,
 				CA73056B1D2B94F200F5F821 /* CryptoKitEngine+Digests.h in Headers */,
 				CA262C7B1D0FDB4F00AB3F5D /* CryptoKit.h in Headers */,
@@ -661,7 +646,6 @@
 				CA33AFF41D09B2EC003803B4 /* CryptoKitEngine.h in Headers */,
 				CA3DFE331D295E3200E16C91 /* CryptoKitMessageHeader.h in Headers */,
 				CA3DFE471D295F0E00E16C91 /* CryptoKitTypes.h in Headers */,
-				CA73059D1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */,
 				CA1B06F61D0AB79D00C39B19 /* NSString+CryptoKit.h in Headers */,
 				CA73056C1D2B94F200F5F821 /* CryptoKitEngine+Digests.h in Headers */,
 				CA33AFF81D09B44E003803B4 /* CryptoKit.h in Headers */,
@@ -686,7 +670,6 @@
 				CAFDED721D0C1BF200CC9C6E /* NSStream+CryptoKit.h in Headers */,
 				CA3DFE341D295E3200E16C91 /* CryptoKitMessageHeader.h in Headers */,
 				CA3DFE481D295F0E00E16C91 /* CryptoKitTypes.h in Headers */,
-				CA73059E1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */,
 				CA1B06F71D0AB79D00C39B19 /* NSString+CryptoKit.h in Headers */,
 				CA73056D1D2B94F200F5F821 /* CryptoKitEngine+Digests.h in Headers */,
 				CA262C7C1D0FDB5300AB3F5D /* CryptoKit.h in Headers */,
@@ -711,7 +694,6 @@
 				CA68F6A41D4292FB005D081A /* CryptoKitEngine.h in Headers */,
 				CA68F6A51D4292FB005D081A /* CryptoKitMessageHeader.h in Headers */,
 				CA68F6A61D4292FB005D081A /* CryptoKitTypes.h in Headers */,
-				CA68F6A71D4292FB005D081A /* CryptoKitErrors.h in Headers */,
 				CA68F6A81D4292FB005D081A /* NSString+CryptoKit.h in Headers */,
 				CA68F6A91D4292FB005D081A /* CryptoKitEngine+Digests.h in Headers */,
 				CA68F6AA1D4292FB005D081A /* CryptoKit.h in Headers */,
@@ -736,7 +718,6 @@
 				CA68F6CF1D429379005D081A /* NSURL+CryptoKit.h in Headers */,
 				CA68F6D01D429379005D081A /* CryptoKitMessageHeader.h in Headers */,
 				CA68F6D11D429379005D081A /* CryptoKitTypes.h in Headers */,
-				CA68F6D21D429379005D081A /* CryptoKitErrors.h in Headers */,
 				CA68F6D31D429379005D081A /* NSString+CryptoKit.h in Headers */,
 				CA68F6D41D429379005D081A /* CryptoKitEngine+Digests.h in Headers */,
 				CA68F6D51D429379005D081A /* CryptoKit.h in Headers */,
@@ -761,7 +742,6 @@
 				CA68F70A1D429484005D081A /* CryptoKitEngine.h in Headers */,
 				CA68F70B1D429484005D081A /* CryptoKitMessageHeader.h in Headers */,
 				CA68F70C1D429484005D081A /* CryptoKitTypes.h in Headers */,
-				CA68F70D1D429484005D081A /* CryptoKitErrors.h in Headers */,
 				CA68F70E1D429484005D081A /* NSString+CryptoKit.h in Headers */,
 				CA68F70F1D429484005D081A /* CryptoKitEngine+Digests.h in Headers */,
 				CA68F7101D429484005D081A /* CryptoKit.h in Headers */,
@@ -786,7 +766,6 @@
 				CA68F7351D4294D3005D081A /* NSURL+CryptoKit.h in Headers */,
 				CA68F7361D4294D3005D081A /* CryptoKitMessageHeader.h in Headers */,
 				CA68F7371D4294D3005D081A /* CryptoKitTypes.h in Headers */,
-				CA68F7381D4294D3005D081A /* CryptoKitErrors.h in Headers */,
 				CA68F7391D4294D3005D081A /* NSString+CryptoKit.h in Headers */,
 				CA68F73A1D4294D3005D081A /* CryptoKitEngine+Digests.h in Headers */,
 				CA68F73B1D4294D3005D081A /* CryptoKit.h in Headers */,
@@ -811,7 +790,6 @@
 				CAFDED691D0C1A7000CC9C6E /* NSURL+CryptoKit.h in Headers */,
 				CA3DFE351D295E3200E16C91 /* CryptoKitMessageHeader.h in Headers */,
 				CA3DFE491D295F0E00E16C91 /* CryptoKitTypes.h in Headers */,
-				CA73059F1D2BAF5C00F5F821 /* CryptoKitErrors.h in Headers */,
 				CAFDED611D0C18D700CC9C6E /* NSString+CryptoKit.h in Headers */,
 				CA73056E1D2B94F200F5F821 /* CryptoKitEngine+Digests.h in Headers */,
 				CA262C7D1D0FDB5300AB3F5D /* CryptoKit.h in Headers */,
@@ -1137,7 +1115,7 @@
 				CA1B07011D0AB86100C39B19 /* NSData+CryptoKit.m in Sources */,
 				CA7305971D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */,
 				CAFDED741D0C1BF200CC9C6E /* NSStream+CryptoKit.m in Sources */,
-				CA3DFE4A1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */,
+				CA65830420964B03002E2D0D /* CryptoKitTypes.m in Sources */,
 				CA1B06F81D0AB79D00C39B19 /* NSString+CryptoKit.m in Sources */,
 				CA7305831D2B9E2500F5F821 /* CryptoKitEngine+Encryption.m in Sources */,
 				CA3DFE361D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */,
@@ -1170,7 +1148,7 @@
 				CA1B07021D0AB86100C39B19 /* NSData+CryptoKit.m in Sources */,
 				CA7305981D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */,
 				CAFDED751D0C1BF200CC9C6E /* NSStream+CryptoKit.m in Sources */,
-				CA3DFE4B1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */,
+				CA65830520964B03002E2D0D /* CryptoKitTypes.m in Sources */,
 				CA1B06F91D0AB79D00C39B19 /* NSString+CryptoKit.m in Sources */,
 				CA7305841D2B9E2500F5F821 /* CryptoKitEngine+Encryption.m in Sources */,
 				CA3DFE371D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */,
@@ -1193,7 +1171,6 @@
 				CA1B07031D0AB86100C39B19 /* NSData+CryptoKit.m in Sources */,
 				CA7305991D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */,
 				CAFDED761D0C1BF200CC9C6E /* NSStream+CryptoKit.m in Sources */,
-				CA3DFE4C1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */,
 				CA1B06FA1D0AB79D00C39B19 /* NSString+CryptoKit.m in Sources */,
 				CA7305851D2B9E2500F5F821 /* CryptoKitEngine+Encryption.m in Sources */,
 				CA3DFE381D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */,
@@ -1216,7 +1193,6 @@
 				CAFDED5D1D0C18B900CC9C6E /* CryptoKitEngine.m in Sources */,
 				CA73059A1D2B9EAE00F5F821 /* CryptoKitEngine+Keys.m in Sources */,
 				CAFDED771D0C1BF200CC9C6E /* NSStream+CryptoKit.m in Sources */,
-				CA3DFE4D1D295F0E00E16C91 /* CryptoKitTypes.m in Sources */,
 				CA1B07041D0AB86100C39B19 /* NSData+CryptoKit.m in Sources */,
 				CA7305861D2B9E2500F5F821 /* CryptoKitEngine+Encryption.m in Sources */,
 				CA3DFE391D295E3200E16C91 /* CryptoKitMessageHeader.m in Sources */,
@@ -1249,7 +1225,7 @@
 				CA68F6901D4292FB005D081A /* NSData+CryptoKit.m in Sources */,
 				CA68F6911D4292FB005D081A /* CryptoKitEngine+Keys.m in Sources */,
 				CA68F6921D4292FB005D081A /* NSStream+CryptoKit.m in Sources */,
-				CA68F6931D4292FB005D081A /* CryptoKitTypes.m in Sources */,
+				CA65830620964B03002E2D0D /* CryptoKitTypes.m in Sources */,
 				CA68F6941D4292FB005D081A /* NSString+CryptoKit.m in Sources */,
 				CA68F6951D4292FB005D081A /* CryptoKitEngine+Encryption.m in Sources */,
 				CA68F6961D4292FB005D081A /* CryptoKitMessageHeader.m in Sources */,
@@ -1272,7 +1248,6 @@
 				CA68F6BB1D429379005D081A /* CryptoKitEngine.m in Sources */,
 				CA68F6BC1D429379005D081A /* CryptoKitEngine+Keys.m in Sources */,
 				CA68F6BD1D429379005D081A /* NSStream+CryptoKit.m in Sources */,
-				CA68F6BE1D429379005D081A /* CryptoKitTypes.m in Sources */,
 				CA68F6BF1D429379005D081A /* NSData+CryptoKit.m in Sources */,
 				CA68F6C01D429379005D081A /* CryptoKitEngine+Encryption.m in Sources */,
 				CA68F6C11D429379005D081A /* CryptoKitMessageHeader.m in Sources */,
@@ -1305,7 +1280,7 @@
 				CA68F6F61D429484005D081A /* NSData+CryptoKit.m in Sources */,
 				CA68F6F71D429484005D081A /* CryptoKitEngine+Keys.m in Sources */,
 				CA68F6F81D429484005D081A /* NSStream+CryptoKit.m in Sources */,
-				CA68F6F91D429484005D081A /* CryptoKitTypes.m in Sources */,
+				CA65830720964B03002E2D0D /* CryptoKitTypes.m in Sources */,
 				CA68F6FA1D429484005D081A /* NSString+CryptoKit.m in Sources */,
 				CA68F6FB1D429484005D081A /* CryptoKitEngine+Encryption.m in Sources */,
 				CA68F6FC1D429484005D081A /* CryptoKitMessageHeader.m in Sources */,
@@ -1328,7 +1303,6 @@
 				CA68F7211D4294D3005D081A /* CryptoKitEngine.m in Sources */,
 				CA68F7221D4294D3005D081A /* CryptoKitEngine+Keys.m in Sources */,
 				CA68F7231D4294D3005D081A /* NSStream+CryptoKit.m in Sources */,
-				CA68F7241D4294D3005D081A /* CryptoKitTypes.m in Sources */,
 				CA68F7251D4294D3005D081A /* NSData+CryptoKit.m in Sources */,
 				CA68F7261D4294D3005D081A /* CryptoKitEngine+Encryption.m in Sources */,
 				CA68F7271D4294D3005D081A /* CryptoKitMessageHeader.m in Sources */,
@@ -1388,7 +1362,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1402,7 +1375,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1494,6 +1466,7 @@
 					"-Weverything",
 					"-Wno-gnu",
 					"-Wno-missing-variable-declarations",
+					"-Wno-auto-import",
 				);
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1586,6 +1559,7 @@
 					"-Weverything",
 					"-Wno-gnu",
 					"-Wno-missing-variable-declarations",
+					"-Wno-auto-import",
 				);
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
@@ -1603,7 +1577,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1617,14 +1590,12 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		CA33AFF01D09B2CF003803B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1634,7 +1605,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1642,7 +1612,6 @@
 		CA33AFF11D09B2CF003803B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1652,7 +1621,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1663,7 +1631,6 @@
 				EXECUTABLE_PREFIX = lib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1673,7 +1640,6 @@
 				EXECUTABLE_PREFIX = lib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1683,7 +1649,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1694,7 +1659,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1708,7 +1672,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1721,7 +1684,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1729,8 +1691,6 @@
 		CA68F6B21D4292FB005D081A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1740,15 +1700,12 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = appletvos;
 			};
 			name = Debug;
 		};
 		CA68F6B31D4292FB005D081A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1758,8 +1715,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = appletvos;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1769,7 +1724,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1780,7 +1734,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1794,7 +1747,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = appletvos;
 			};
 			name = Debug;
 		};
@@ -1807,7 +1759,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = appletvos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1815,8 +1766,6 @@
 		CA68F7181D429484005D081A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1826,15 +1775,12 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = watchos;
 			};
 			name = Debug;
 		};
 		CA68F7191D429484005D081A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1844,8 +1790,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKit;
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = watchos;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1855,7 +1799,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1866,7 +1809,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CryptoKit;
-				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1880,7 +1822,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = watchos;
 			};
 			name = Debug;
 		};
@@ -1893,7 +1834,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.operationalsemantics.CryptoKitTests;
 				PRODUCT_NAME = CryptoKitTests;
-				SDKROOT = watchos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

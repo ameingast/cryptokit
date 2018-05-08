@@ -451,18 +451,20 @@
 
 - (void)testEncryptionIntegrity
 {
-    NSError *encryptionError = nil, *decryptionError = nil;
+    NSError *digestError = nil, *encryptionError = nil, *decryptionError = nil;
     NSData *plainData = [self dataBlob];
-    NSString *plainDataHash = [plainData sha512HexHash];
+    NSString *plainDataHash = [plainData sha512HexHash:&digestError];
     NSData *encryptedData = [plainData encryptedDataWithPassword:CryptoKitPassword
                                                            error:&encryptionError];
     XCTAssertNotNil(encryptedData);
     XCTAssertNil(encryptionError);
+    XCTAssertNil(digestError);
     NSData *decryptedData = [encryptedData decryptedDataWithPassword:CryptoKitPassword
                                                                error:&decryptionError];
     XCTAssertNotNil(decryptedData);
     XCTAssertNil(decryptionError);
-    NSString *decryptedDataHash = [decryptedData sha512HexHash];
+    NSString *decryptedDataHash = [decryptedData sha512HexHash:&digestError];
+    XCTAssertNil(digestError);
     XCTAssertEqualObjects(plainDataHash, decryptedDataHash);
 }
 

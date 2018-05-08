@@ -27,86 +27,114 @@ static NSString *const CryptoKitTestsInputExpectedSHA512 = @"846e0ef73436438a4ac
 
 - (void)testNSStringDigesting
 {
-    NSString *MD2Result = [CryptoKitTestsInput md2HexHash];
+    NSError *error;
+    NSString *MD2Result = [CryptoKitTestsInput md2HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
-    NSString *MD4Result = [CryptoKitTestsInput md4HexHash];
+    NSString *MD4Result = [CryptoKitTestsInput md4HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
-    NSString *MD5Result = [CryptoKitTestsInput md5HexHash];
+    NSString *MD5Result = [CryptoKitTestsInput md5HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
-    NSString *SHA1Result = [CryptoKitTestsInput sha1HexHash];
+    NSString *SHA1Result = [CryptoKitTestsInput sha1HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
-    NSString *SHA224Result = [CryptoKitTestsInput sha224HexHash];
+    NSString *SHA224Result = [CryptoKitTestsInput sha224HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
-    NSString *SHA384Result = [CryptoKitTestsInput sha384HexHash];
+    NSString *SHA384Result = [CryptoKitTestsInput sha384HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
-    NSString *SHA512Result = [CryptoKitTestsInput sha512HexHash];
+    NSString *SHA512Result = [CryptoKitTestsInput sha512HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+    CKDigestBatchResult *batchResult = [CryptoKitTestsInput hashes:&error];
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, [batchResult md2HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, [batchResult md4HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, [batchResult md5HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, [batchResult sha1HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, [batchResult sha224HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, [batchResult sha384HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, [batchResult sha512HexDigest]);
 }
 
 - (void)testNSDataDigesting
 {
-
+    NSError *error;
     NSData *data = [CryptoKitTestsInput dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *MD2Result = [data md2HexHash];
+    NSString *MD2Result = [data md2HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
-    NSString *MD4Result = [data md4HexHash];
+    NSString *MD4Result = [data md4HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
-    NSString *MD5Result = [data md5HexHash];
+    NSString *MD5Result = [data md5HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
-    NSString *SHA1Result = [data sha1HexHash];
+    NSString *SHA1Result = [data sha1HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
-    NSString *SHA224Result = [data sha224HexHash];
+    NSString *SHA224Result = [data sha224HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
-    NSString *SHA384Result = [data sha384HexHash];
+    NSString *SHA384Result = [data sha384HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
-    NSString *SHA512Result = [data sha512HexHash];
+    NSString *SHA512Result = [data sha512HexHash:&error];
     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+    CKDigestBatchResult *batchResult = [data hashes:&error];
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, [batchResult md2HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, [batchResult md4HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, [batchResult md5HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, [batchResult sha1HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, [batchResult sha224HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, [batchResult sha384HexDigest]);
+    XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, [batchResult sha512HexDigest]);
 }
 
 - (void)testNSURLDigesting
 {
     NSData *data = [CryptoKitTestsInput dataUsingEncoding:NSUTF8StringEncoding];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *MD2Result = [url md2HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
+        NSError *error = nil;
+        NSString *MD2Result = [url md2HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *MD4Result = [url md4HexHash:&error];
+        NSError *error = nil;
+        NSString *MD4Result = [url md4HexHash:&error];
 
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *MD5Result = [url md5HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
+        NSError *error = nil;
+        NSString *MD5Result = [url md5HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *SHA1Result = [url sha1HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
+        NSError *error = nil;
+        NSString *SHA1Result = [url sha1HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *SHA224Result = [url sha224HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
+        NSError *error = nil;
+        NSString *SHA224Result = [url sha224HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *SHA384Result = [url sha384HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
+        NSError *error = nil;
+        NSString *SHA384Result = [url sha384HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
     }];
     [self withTemporaryFileURL:data callback:^(NSURL *url) {
-      NSError *error = nil;
-      NSString *SHA512Result = [url sha512HexHash:&error];
-      XCTAssertNil(error);
-      XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+        NSError *error = nil;
+        NSString *SHA512Result = [url sha512HexHash:&error];
+        XCTAssertNil(error);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+    }];
+    [self withTemporaryFileURL:data callback:^(NSURL *url) {
+        NSError *error = nil;
+        CKDigestBatchResult *batchResult = [url hashes:&error];
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, [batchResult md2HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, [batchResult md4HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, [batchResult md5HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, [batchResult sha1HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, [batchResult sha224HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, [batchResult sha384HexDigest]);
+        XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, [batchResult sha512HexDigest]);
     }];
 }
 
@@ -115,52 +143,64 @@ static NSString *const CryptoKitTestsInputExpectedSHA512 = @"846e0ef73436438a4ac
     NSData *data = [CryptoKitTestsInput dataUsingEncoding:NSUTF8StringEncoding];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *MD2Result = [inputStream md2HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
+                     NSError *error = nil;
+                     NSString *MD2Result = [inputStream md2HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, MD2Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *MD4Result = [inputStream md4HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
+                     NSError *error = nil;
+                     NSString *MD4Result = [inputStream md4HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, MD4Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *MD5Result = [inputStream md5HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
+                     NSError *error = nil;
+                     NSString *MD5Result = [inputStream md5HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, MD5Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *SHA1Result = [inputStream sha1HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
+                     NSError *error = nil;
+                     NSString *SHA1Result = [inputStream sha1HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, SHA1Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *SHA224Result = [inputStream sha224HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
+                     NSError *error = nil;
+                     NSString *SHA224Result = [inputStream sha224HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, SHA224Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *SHA384Result = [inputStream sha384HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
+                     NSError *error = nil;
+                     NSString *SHA384Result = [inputStream sha384HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, SHA384Result);
                  }];
     [self withInputStream:data
                  callback:^(NSInputStream *inputStream) {
-                   NSError *error = nil;
-                   NSString *SHA512Result = [inputStream sha512HexHash:&error];
-                   XCTAssertNil(error);
-                   XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+                     NSError *error = nil;
+                     NSString *SHA512Result = [inputStream sha512HexHash:&error];
+                     XCTAssertNil(error);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, SHA512Result);
+                 }];
+    [self withInputStream:data
+                 callback:^(NSInputStream *inputStream) {
+                     NSError *error = nil;
+                     CKDigestBatchResult *batchResult = [inputStream hashes:&error];
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD2, [batchResult md2HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD4, [batchResult md4HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedMD5, [batchResult md5HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA1, [batchResult sha1HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA224, [batchResult sha224HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA384, [batchResult sha384HexDigest]);
+                     XCTAssertEqualObjects(CryptoKitTestsInputExpectedSHA512, [batchResult sha512HexDigest]);
                  }];
 }
 
@@ -168,7 +208,23 @@ static NSString *const CryptoKitTestsInputExpectedSHA512 = @"846e0ef73436438a4ac
 {
     NSData *data = [self dataBlob];
     [self measureBlock:^{
-      [data md5Hash];
+        NSError *error = nil;
+        [data md2Hash:&error];
+        [data md4Hash:&error];
+        [data md5Hash:&error];
+        [data sha1Hash:&error];
+        [data sha224Hash:&error];
+        [data sha384Hash:&error];
+        [data sha512Hash:&error];
+    }];
+}
+
+- (void)testPerformanceOfNSDataBatchDigesting
+{
+    NSData *data = [self dataBlob];
+    [self measureBlock:^{
+        NSError *error = nil;
+        [data hashes:&error];
     }];
 }
 

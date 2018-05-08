@@ -7,12 +7,11 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
+#import "CryptoKitTypes.h"
 #import "CryptoKitEngine+Digests.h"
 #import "CryptoKitEngine+Keys.h"
 #import "CryptoKitMessageHeader.h"
-
 #import "NSInputStream+CryptoKitPrivate.h"
 #import "NSOutputStream+CryptoKitPrivate.h"
 
@@ -76,7 +75,6 @@ NS_ASSUME_NONNULL_END
     _version = [NSData dataWithBytes:&CryptoKitSerializationVersion
                               length:sizeof(uint32_t)];
     _initializationVector = [engine randomBytesWithLength:CryptoKitInitializationVectorBlockSize];
-
     _salt = [engine randomBytesWithLength:CryptoKitSaltSize];
     _headerChecksum = [self calculateHeaderChecksum];
     _padding = [engine randomBytesWithLength:CryptoKitMessageHeaderPaddingSize];

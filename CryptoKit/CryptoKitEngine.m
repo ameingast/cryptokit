@@ -7,7 +7,6 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
 #import "CryptoKitEngine+Digests.h"
 #import "CryptoKitEngine+Encryption.h"
@@ -24,12 +23,12 @@
 
 @implementation CryptoKitEngine
 
-+ (instancetype)sharedInstance
++ (CryptoKitEngine *)sharedInstance
 {
     static CryptoKitEngine *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-      instance = [CryptoKitEngine new];
+        instance = [CryptoKitEngine new];
     });
     return instance;
 }
@@ -43,6 +42,20 @@
     @try {
         NSData *result = [self calculateDigestInternal:inputStream
                                             digestType:digestType];
+        return result;
+    } @catch (NSException *exception) {
+        if (error) {
+            *error = [self translateException:exception];
+        }
+        return nil;
+    }
+}
+
+- (CKDigestBatchResult *)calculateDigests:(NSInputStream *)inputStream
+                                                            error:(NSError *__autoreleasing *)error
+{
+    @try {
+        CKDigestBatchResult *result = [self calculateDigestsInternal:inputStream];
         return result;
     } @catch (NSException *exception) {
         if (error) {
@@ -139,7 +152,7 @@
     NSError *error = [NSError errorWithDomain:CryptoKitErrorDomain
                                          code:[errorCode integerValue]
                                      userInfo:errorUserInfo];
-
+    
     return error;
 }
 

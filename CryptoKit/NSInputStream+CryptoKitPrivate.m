@@ -6,7 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import "CryptoKitErrors.h"
+#import "CryptoKitTypes.h"
 #import "NSInputStream+CryptoKitPrivate.h"
 
 @implementation NSInputStream (CryptoKitPrivate)

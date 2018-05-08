@@ -7,14 +7,14 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
+
+#import "CryptoKitTypes.h"
 #import "CryptoKitEngine+Encryption.h"
 #import "CryptoKitEngine+Keys.h"
 #import "CryptoKitMessageHeader.h"
 #import "CryptoKitMessagePayload.h"
 #import "CryptoKitMessageTrailer.h"
-
 #import "NSStream+CryptoKitPrivate.h"
 
 const int32_t CryptoKitRecryptionBufferSize = 2048;

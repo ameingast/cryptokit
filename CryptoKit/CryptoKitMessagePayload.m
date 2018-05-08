@@ -7,11 +7,10 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
+#import "CryptoKitTypes.h"
 #import "CryptoKitMessageHeader.h"
 #import "CryptoKitMessagePayload.h"
-#import "CryptoKitTypes.h"
 
 #import "NSInputStream+CryptoKitPrivate.h"
 #import "NSOutputStream+CryptoKitPrivate.h"

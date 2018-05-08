@@ -125,6 +125,14 @@
     return result;
 }
 
+- (CKDigestBatchResult *)hashes:(NSError *__autoreleasing *)error
+{
+    NSInputStream *inputStream = [NSInputStream inputStreamWithURL:self];
+    CKDigestBatchResult *result = [NSStream hashesForInputStream:inputStream
+                                                                          error:error];
+    return result;
+}
+
 #pragma mark - Encryption
 
 - (BOOL)encryptedURLWithPassword:(NSString *)password

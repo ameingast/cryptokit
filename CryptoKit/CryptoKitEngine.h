@@ -14,13 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CryptoKitEngine : NSObject
 
-+ (instancetype)sharedInstance;
++ (CryptoKitEngine *)sharedInstance;
 
 #pragma mark - Digests
 
 - (nullable NSData *)calculateDigest:(NSInputStream *)inputStream
                           digestType:(CryptoKitDigestType)digestType
                                error:(NSError *__nullable *)error;
+- (nullable CKDigestBatchResult *)calculateDigests:(NSInputStream *)inputStream
+                                             error:(NSError *__nullable *)error;
 - (nullable NSString *)digestToHumanReadableRepresentation:(NSData *)data
                                                 digestType:(CryptoKitDigestType)digestType
                                                      error:(NSError *__nullable *)error;

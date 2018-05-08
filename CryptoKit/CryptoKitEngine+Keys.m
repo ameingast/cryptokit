@@ -7,8 +7,9 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
+
+#import "CryptoKitTypes.h"
 #import "CryptoKitEngine+Keys.h"
 
 const uint32_t CryptoKitKeyGeneratorRounds = 100000;
@@ -45,7 +46,7 @@ const uint32_t CryptoKitKeySize = kCCKeySizeAES256;
 {
     NSMutableData *data = [NSMutableData dataWithLength:length];
     NSInteger result = SecRandomCopyBytes(kSecRandomDefault, [data length], [data mutableBytes]);
-    if (result == -1) {
+    if (result != 0) {
         NSString *reason = [NSString stringWithFormat:@"Random byte generation failed: %@",
                                                       @(strerror(errno))];
         @throw [NSException exceptionWithName:CryptoKitErrorDomain

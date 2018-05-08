@@ -13,115 +13,123 @@ static const NSStringEncoding OSDefaultStringEncoding = NSUTF8StringEncoding;
 
 @implementation NSString (CococaCryptoHashing)
 
-- (NSData *)md2Hash
+- (NSData *)md2Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data md2Hash];
+    NSData *result = [data md2Hash:error];
     return result;
 }
 
-- (NSString *)md2HexHash
+- (NSString *)md2HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data md2HexHash];
+    NSString *result = [data md2HexHash:error];
     return result;
 }
 
-- (NSData *)md4Hash
+- (NSData *)md4Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data md4Hash];
+    NSData *result = [data md4Hash:error];
     return result;
 }
 
-- (NSString *)md4HexHash
+- (NSString *)md4HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data md4HexHash];
+    NSString *result = [data md4HexHash:error];
     return result;
 }
 
-- (NSData *)md5Hash
+- (NSData *)md5Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data md5Hash];
+    NSData *result = [data md5Hash:error];
     return result;
 }
 
-- (NSString *)md5HexHash
+- (NSString *)md5HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data md5HexHash];
+    NSString *result = [data md5HexHash:error];
     return result;
 }
 
-- (NSData *)sha1Hash
+- (NSData *)sha1Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data sha1Hash];
+    NSData *result = [data sha1Hash:error];
     return result;
 }
 
-- (NSString *)sha1HexHash
+- (NSString *)sha1HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data sha1HexHash];
+    NSString *result = [data sha1HexHash:error];
     return result;
 }
 
-- (NSData *)sha224Hash
+- (NSData *)sha224Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data sha224Hash];
+    NSData *result = [data sha224Hash:error];
     return result;
 }
 
-- (NSString *)sha224HexHash
+- (NSString *)sha224HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data sha224HexHash];
+    NSString *result = [data sha224HexHash:error];
     return result;
 }
 
-- (NSData *)sha384Hash
+- (NSData *)sha384Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data sha384Hash];
+    NSData *result = [data sha384Hash:error];
     return result;
 }
 
-- (NSString *)sha384HexHash
+- (NSString *)sha384HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data sha384HexHash];
+    NSString *result = [data sha384HexHash:error];
     return result;
 }
 
-- (NSData *)sha512Hash
+- (NSData *)sha512Hash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSData *result = [data sha512Hash];
+    NSData *result = [data sha512Hash:error];
     return result;
 }
 
-- (NSString *)sha512HexHash
+- (NSString *)sha512HexHash:(NSError *__autoreleasing *)error
 {
     NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
                       allowLossyConversion:NO];
-    NSString *result = [data sha512HexHash];
+    NSString *result = [data sha512HexHash:error];
+    return result;
+}
+
+- (CKDigestBatchResult *)hashes:(NSError *__autoreleasing *)error
+{
+    NSData *data = [self dataUsingEncoding:OSDefaultStringEncoding
+                      allowLossyConversion:NO];
+    CKDigestBatchResult *result = [data hashes:error];
     return result;
 }
 

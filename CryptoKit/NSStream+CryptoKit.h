@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+@class CKDigestBatchResult;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSStream (CryptoKit)
@@ -111,6 +113,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable NSString *)sha512HexHashForInputStream:(NSInputStream *)inputStream
                                              error:(NSError *__nullable *)error;
+
+/**
+ * A convenience method for calculating digests of contents of the provided inputStream without having to open or close
+ * the underlying stream manually.
+ */
++ (nullable CKDigestBatchResult *)hashesForInputStream:(NSInputStream *)inputStream
+                                                 error:(NSError *__nullable *)error;
 
 #pragma mark - Encryption
 

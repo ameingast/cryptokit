@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
                          digestType:(CryptoKitDigestType)digestType;
 - (NSString *)digestToHumanReadableRepresentationInternal:(NSData *)data
                                                digestType:(CryptoKitDigestType)digestType;
+- (CKDigestBatchResult *)calculateDigestsInternal:(NSInputStream *)inputStream;
 
 @end
 

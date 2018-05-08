@@ -34,8 +34,12 @@ const NSUInteger CryptoKitDataBlobSize = 1024 * 256 + 137;
         callback(url);
     } @finally {
         if (url) {
-            [[NSFileManager defaultManager] removeItemAtURL:url
-                                                      error:nil];
+            NSError *error;
+            BOOL removeResult = [[NSFileManager defaultManager] removeItemAtURL:url
+                                                                          error:&error];
+            if (!removeResult) {
+                XCTFail(@"Unable to clean up temporary file at: %@ - %@", url, error);
+            }
         }
     }
 }
@@ -49,7 +53,7 @@ const NSUInteger CryptoKitDataBlobSize = 1024 * 256 + 137;
         [inputStream open];
         callback(inputStream);
     } @finally {
-        if ([inputStream streamStatus] != NSStreamStatusNotOpen) {
+        if (inputStream && [inputStream streamStatus] != NSStreamStatusNotOpen) {
             [inputStream close];
         }
     }
@@ -63,7 +67,7 @@ const NSUInteger CryptoKitDataBlobSize = 1024 * 256 + 137;
         [outputStream open];
         callback(outputStream);
     } @finally {
-        if ([outputStream streamStatus] != NSStreamStatusNotOpen) {
+        if (outputStream && [outputStream streamStatus] != NSStreamStatusNotOpen) {
             [outputStream close];
         }
     }

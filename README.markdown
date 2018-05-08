@@ -61,6 +61,22 @@ Just declare this dependency in your Podfile:
 pod 'CryptoKit', :git => 'https://github.com/ameingast/cryptokit.git'
 ```
 
+### Installation with Carthage                                                  
+
+To use [Carthage](https://github.com/Carthage/Carthage) (a more lightweight but more hands on package manager) just create a `Cartfile` with
+
+```ruby                                                                         
+github "ameingast/cryptokit" ~> 1.4.0                                   
+```                                        
+
+Then follow the [steps in the Carthage guide](https://github.com/Carthage/Carthage#getting-started) basically:
+
+* run `carthage update`                                                         
+* drag the framework from Carthage/Build into Linked Frameworks on the General tab
+* add `carthage copy-frameworks` to a `Run Scripts` phase                       
+
+and you're done.  The [steps for Mac are very similar](https://github.com/Carthage/Carthage#getting-started).
+
 ### API
 
 CryptoKit extends the following classes:
@@ -308,7 +324,7 @@ Thank you!
 
 ## Copyright and Licensing
 
-Copyright (c) 2016, Andreas Meingast <ameingast@gmail.com>.
+Copyright (c) 2016-2018, Andreas Meingast <ameingast@gmail.com>.
 
 The framework is published under a BSD style license. For more information, please see the LICENSE file.
 

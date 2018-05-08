@@ -17,72 +17,77 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Generate the MD2 digest of the NSString instance.
  */
-- (NSData *)md2Hash;
+- (nullable NSData *)md2Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the MD2 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)md2HexHash;
+- (nullable NSString *)md2HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the MD4 digest of the NSString instance.
  */
-- (NSData *)md4Hash;
+- (nullable NSData *)md4Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the MD4 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)md4HexHash;
+- (nullable NSString *)md4HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the MD5 digest of the NSString instance.
  */
-- (NSData *)md5Hash;
+- (nullable NSData *)md5Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the MD5 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)md5HexHash;
+- (nullable NSString *)md5HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA1 digest of the NSString instance.
  */
-- (NSData *)sha1Hash;
+- (nullable NSData *)sha1Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA1 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)sha1HexHash;
+- (nullable NSString *)sha1HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA224 digest of the NSString instance.
  */
-- (NSData *)sha224Hash;
+- (nullable NSData *)sha224Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA224 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)sha224HexHash;
+- (nullable NSString *)sha224HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA384 digest of the NSString instance.
  */
-- (NSData *)sha384Hash;
+- (nullable NSData *)sha384Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA384 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)sha384HexHash;
+- (nullable NSString *)sha384HexHash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA512 digest of the NSString instance.
  */
-- (NSData *)sha512Hash;
+- (nullable NSData *)sha512Hash:(NSError *__nullable *)error;
 
 /**
  * Generate the SHA512 digest of the NSString instance in a human readable NSString representation.
  */
-- (NSString *)sha512HexHash;
+- (nullable NSString *)sha512HexHash:(NSError *__nullable *)error;
+
+/**
+ * Generate the digests of the NSString instance.
+ */
+- (nullable CKDigestBatchResult *)hashes:(NSError *__nullable *)error;
 
 @end
 

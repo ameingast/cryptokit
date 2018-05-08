@@ -7,11 +7,10 @@
 //
 
 #import <CommonCrypto/CommonCrypto.h>
-#import <CryptoKit/CryptoKitErrors.h>
 
+#import "CryptoKitTypes.h"
 #import "CryptoKitMessageHeader.h"
 #import "CryptoKitMessageTrailer.h"
-
 #import "NSOutputStream+CryptoKitPrivate.h"
 
 const uint32_t CryptoKitTrailerEncryptionAlgorithm = kCCAlgorithmAES;

@@ -160,6 +160,13 @@
     return result;
 }
 
+- (CKDigestBatchResult *)hashes:(NSError *__autoreleasing *)error
+{
+    CKDigestBatchResult *result = [self.engine calculateDigests:self
+                                                          error:error];
+    return result;
+}
+
 #pragma mark - Encryption
 
 - (BOOL)encryptWithPassword:(NSString *)password
