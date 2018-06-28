@@ -10,8 +10,54 @@
 
 #import "CryptoKitTypes.h"
 #import "CryptoKitEngine.h"
+#import "NSException+CryptoKitPrivate.h"
+#import "NSStream+CryptoKitPrivate.h"
+#import "NSMutableArray+CryptoKitPrivate.h"
 
 NSString *const CryptoKitErrorDomain = @"com.operationalsemantics.CryptoKit";
+NSString *const CKChunkHandlerFileFormat = @"CK-%020ld";
+
+NSUInteger NSUIntegerWithRandomValue(NSUInteger max);
+
+inline CKChunkHandler CKChunkHandlerForFilesInDirectory(NSURL *directory, NSError *__autoreleasing *error)
+{
+    NSUInteger __block chunkCount = 0;
+    return ^BOOL (NSData *chunk) {
+        if (chunk) {
+            NSURL *fileURL = [directory URLByAppendingPathComponent:[NSString stringWithFormat:CKChunkHandlerFileFormat, (unsigned long)chunkCount++]];
+            return fileURL ? [chunk writeToURL:fileURL
+                                       options:0
+                                         error:error] : NO;
+        } else {
+            return NO;
+        }
+    };
+}
+
+inline CKChunkProvider CKChunkProviderForFilesInDirectory(NSURL *directory, NSError *__autoreleasing *error)
+{
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSURL *url,
+                                                                   NSDictionary<NSString *,id> * __unused bindings) {
+        return [[url lastPathComponent] hasPrefix:@"CK-"];
+    }];
+    NSArray<NSURL *> *filesInDirectory = [[[NSFileManager defaultManager] contentsOfDirectoryAtURL:directory
+                                                                        includingPropertiesForKeys:nil
+                                                                                           options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                                                             error:error] filteredArrayUsingPredicate:predicate];
+    if (!filesInDirectory) {
+        return nil;
+    }
+    NSMutableArray<NSURL *> *files = [NSMutableArray arrayWithArray:filesInDirectory];
+    [files sortByComparingLastPathComponent];
+    return ^NSData *{
+        NSURL *nextFile = [files firstObject];
+        if (!nextFile) {
+            return nil;
+        }
+        [files removeObjectAtIndex:0];
+        return [NSData dataWithContentsOfURL:nextFile];
+    };
+}
 
 inline NSUInteger CryptoKitDigestTypeSize(CryptoKitDigestType digestType)
 {
@@ -56,6 +102,31 @@ inline NSString *NSStringFromCCStatus(CCStatus status)
         default:
             return [NSString stringWithFormat:@"Unknown CCStatus: %d", status];
     }
+}
+
+inline NSMutableData *NSMutableDataForPartitionStrategy(CKPartitionStrategy partitionStrategy)
+{
+    NSUInteger chunkSize = 1024 * 1024;
+    switch (partitionStrategy) {
+        case CKPartitionStrategyFixed:
+            return [NSMutableData dataWithLength:chunkSize];
+        case CKPartitionStrategyRandom:
+            return [NSMutableData dataWithLength:NSUIntegerWithRandomValue(chunkSize * 4)];
+    }
+}
+
+inline NSUInteger NSUIntegerWithRandomValue(NSUInteger max)
+{
+    NSUInteger number = 0;
+    NSInteger result = SecRandomCopyBytes(kSecRandomDefault, sizeof(NSUInteger), &number);
+    if (result != 0) {
+        NSString *reason = [NSString stringWithFormat:@"Random number generation failed: %@",
+                            @(strerror(errno))];
+        @throw [NSException exceptionWithName:CryptoKitErrorDomain
+                                       reason:reason
+                                     userInfo:@{ @"errorCode": @(CryptoKitInternalError) }];
+    }
+    return number % max;
 }
 
 @implementation CKDigestBatchResult

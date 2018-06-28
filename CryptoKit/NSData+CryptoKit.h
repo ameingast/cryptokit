@@ -6,9 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
-@class CKDigestBatchResult;
+#import <CryptoKit/CryptoKitTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

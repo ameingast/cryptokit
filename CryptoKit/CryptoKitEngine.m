@@ -11,15 +11,11 @@
 #import "CryptoKitEngine+Digests.h"
 #import "CryptoKitEngine+Encryption.h"
 #import "CryptoKitEngine+Keys.h"
+#import "CryptoKitEngine+Partitioning.h"
 #import "CryptoKitEngine.h"
 #import "CryptoKitMessageHeader.h"
 #import "CryptoKitTypes.h"
-
-@interface CryptoKitEngine ()
-
-- (NSError *)translateException:(NSException *)exception;
-
-@end
+#import "NSException+CryptoKitPrivate.h"
 
 @implementation CryptoKitEngine
 
@@ -45,21 +41,21 @@
         return result;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return nil;
     }
 }
 
 - (CKDigestBatchResult *)calculateDigests:(NSInputStream *)inputStream
-                                                            error:(NSError *__autoreleasing *)error
+                                    error:(NSError *__autoreleasing *)error
 {
     @try {
         CKDigestBatchResult *result = [self calculateDigestsInternal:inputStream];
         return result;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return nil;
     }
@@ -75,7 +71,7 @@
         return result;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return nil;
     }
@@ -95,7 +91,7 @@
         return YES;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return NO;
     }
@@ -113,7 +109,7 @@
         return YES;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return NO;
     }
@@ -133,27 +129,51 @@
         return YES;
     } @catch (NSException *exception) {
         if (error) {
-            *error = [self translateException:exception];
+            *error = [exception asError];
         }
         return NO;
     }
 }
 
-#pragma mark - Helpers
+#pragma mark - Partitioning
 
-- (NSError *)translateException:(NSException *)exception
+- (BOOL)disassembleFromInputStream:(NSInputStream *)inputStream
+                 partitionStrategy:(CKPartitionStrategy)partitionStrategy
+                          password:(NSString *)password
+                      chunkHandler:(CKChunkHandler)chunkHandler
+                             error:(NSError *__autoreleasing *)error
 {
-    NSAssert(exception, @"Exception must not be nil");
-    NSString *reason = [exception reason];
-    NSDictionary *userInfo = [exception userInfo];
-    NSNumber *errorCode = userInfo[@"errorCode"];
-    NSMutableDictionary *errorUserInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
-    errorUserInfo[NSLocalizedFailureReasonErrorKey] = reason;
-    NSError *error = [NSError errorWithDomain:CryptoKitErrorDomain
-                                         code:[errorCode integerValue]
-                                     userInfo:errorUserInfo];
-    
-    return error;
+    BOOL __block success = YES;
+    @try {
+        [self disassembleFromInputStreamInternal:inputStream
+                               partitionStrategy:partitionStrategy
+                                        password:password
+                                    chunkHandler:chunkHandler];
+    } @catch (NSException *exception) {
+        if (error) {
+            *error = [exception asError];
+        }
+        success = NO;
+    }
+    return success;
+}
+
+- (BOOL)assembleToOutputStream:(NSOutputStream *)outputStream
+                      password:(NSString *)password
+                 chunkProvider:(CKChunkProvider)chunkProvider
+                         error:(NSError *__autoreleasing *)error
+{
+    @try {
+        [self assembleToOutputStreamInternal:outputStream
+                                    password:password
+                               chunkProvider:chunkProvider];
+        return YES;
+    } @catch (NSException *exception) {
+        if (error) {
+            *error = [exception asError];
+        }
+        return NO;
+    }
 }
 
 @end

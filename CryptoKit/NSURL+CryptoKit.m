@@ -179,4 +179,33 @@
     return result;
 }
 
+#pragma mark - Partitioning
+
+- (BOOL)disassembleFromURLWithpartitionStrategy:(CKPartitionStrategy)partitionStrategy
+                                       password:(NSString *)password
+                                   chunkHandler:(CKChunkHandler)chunkHandler
+                                          error:(NSError *__autoreleasing *)error
+{
+    NSInputStream *inputSTream = [NSInputStream inputStreamWithURL:self];
+    BOOL result = [NSStream disassembleFromInputStream:inputSTream
+                                     partitionStrategy:partitionStrategy
+                                              password:password
+                                          chunkHandler:chunkHandler
+                                                 error:error];
+    return result;
+}
+
+- (BOOL)assembleToURLWithPassword:(NSString *)password
+                    chunkProvider:(CKChunkProvider)chunkProvider
+                            error:(NSError *__autoreleasing *)error
+{
+    NSOutputStream *outputStream = [NSOutputStream outputStreamWithURL:self
+                                                                append:NO];
+    BOOL result = [NSStream assembleToOutputStream:outputStream
+                                          password:password
+                                     chunkProvider:chunkProvider
+                                             error:error];
+    return result;
+}
+
 @end

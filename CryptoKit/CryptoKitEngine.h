@@ -6,9 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
-#import "CryptoKitTypes.h"
+#import <CryptoKit/CryptoKitTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,6 +40,18 @@ NS_ASSUME_NONNULL_BEGIN
                   password:(NSString *)password
                newPassword:(NSString *)newPassword
                      error:(NSError *__nullable *)error;
+
+#pragma mark - Partitioning
+
+- (BOOL)disassembleFromInputStream:(NSInputStream *)inputStream
+                 partitionStrategy:(CKPartitionStrategy)partitionStrategy
+                          password:(NSString *)password
+                      chunkHandler:(CKChunkHandler)chunkHandler
+                             error:(NSError *__nullable *)error;
+- (BOOL)assembleToOutputStream:(NSOutputStream *)outputStream
+                      password:(NSString *)password
+                 chunkProvider:(CKChunkProvider)chunkProvider
+                         error:(NSError *__nullable *)error;
 
 @end
 

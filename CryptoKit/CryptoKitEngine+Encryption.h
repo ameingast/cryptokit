@@ -6,8 +6,6 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
 #import "CryptoKitEngine.h"
 
 extern const int32_t CryptoKitRecryptionBufferSize;

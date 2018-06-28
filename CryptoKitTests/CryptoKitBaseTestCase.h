@@ -24,6 +24,7 @@ extern const NSUInteger CryptoKitDataBlobSize;
 - (void)withInMemoryOutputStream:(void (^)(NSOutputStream *outputStream))callback;
 - (void)withTemporaryFileURL:(nullable NSData *)content
                     callback:(void (^)(NSURL *url))callback;
+- (void)withTemporaryDirectoryURL:(void (^)(NSURL *url))callback;
 - (NSUInteger)randomNumberWithLowerBound:(NSUInteger)lowerBound
                            andUpperBound:(NSUInteger)upperBound;
 

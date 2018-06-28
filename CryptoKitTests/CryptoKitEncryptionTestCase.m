@@ -447,6 +447,133 @@
     }];
 }
 
+#pragma mark - Partitioning
+
+- (void)testStreamPartitioning
+{
+    NSError *error;
+    NSData *data = [[CryptoKitEngine sharedInstance] randomBytesWithLength:1024 * 1024 * 32 + 17];
+    NSMutableArray<NSData *> *partitionChunks = [NSMutableArray new];
+    BOOL disassembleResult = [NSStream disassembleFromInputStream:(NSInputStream *)[NSInputStream inputStreamWithData:data]
+                                                partitionStrategy:CKPartitionStrategyRandom
+                                                         password:CryptoKitPassword
+                                                     chunkHandler:^BOOL (NSData *chunk) {
+                                                         if (!chunk) {
+                                                             XCTFail(@"Disassembly failed");
+                                                             return NO;
+                                                         }
+                                                         [partitionChunks addObject:chunk];
+                                                         return YES;
+                                                     }
+                                                            error:&error];
+    XCTAssertTrue(disassembleResult);
+    NSOutputStream *outputStream = [NSOutputStream outputStreamToMemory];
+    BOOL assembleResult = [NSStream assembleToOutputStream:outputStream
+                                                  password:CryptoKitPassword
+                                             chunkProvider:^NSData * {
+                                                 NSData *chunk = [partitionChunks firstObject];
+                                                 if (chunk) {
+                                                     [partitionChunks removeObjectAtIndex:0];
+                                                     return chunk;
+                                                 } else {
+                                                     return nil;
+                                                 }
+                                             }
+                                                     error:&error];
+    XCTAssertTrue(assembleResult);
+    XCTAssertEqual(0ul, [partitionChunks count]);
+    NSData *assembledData = [outputStream propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
+    XCTAssertEqualObjects(data, assembledData);
+}
+
+- (void)testURLPartitioning
+{
+    NSData *data = [[CryptoKitEngine sharedInstance] randomBytesWithLength:1024 * 1024 * 32 + 17];
+    [self withTemporaryFileURL:data callback:^(NSURL *sourceURL) {
+        [self withTemporaryFileURL:nil callback:^(NSURL *targetURL) {
+            NSError *error;
+            NSMutableArray<NSData *> *chunks = [NSMutableArray new];
+            BOOL disassembleResult = [sourceURL disassembleFromURLWithpartitionStrategy:CKPartitionStrategyRandom
+                                                                               password:CryptoKitPassword
+                                                                           chunkHandler:^BOOL (NSData *chunk) {
+                                                                               if (chunk) {
+                                                                                   [chunks addObject:chunk];
+                                                                                   return YES;
+                                                                               } else {
+                                                                                   XCTFail(@"Disassembly failed");
+                                                                                   return NO;
+                                                                               }
+                                                                           }
+                                                                                  error:&error];
+            XCTAssertTrue(disassembleResult);
+            BOOL assembleResult = [targetURL assembleToURLWithPassword:CryptoKitPassword
+                                                         chunkProvider:^NSData * {
+                                                             NSData *chunk = [chunks firstObject];
+                                                             if (chunk) {
+                                                                 [chunks removeObjectAtIndex:0];
+                                                                 return chunk;
+                                                             } else {
+                                                                 return nil;
+                                                             }
+                                                         }
+                                                                 error:&error];
+            XCTAssertTrue(assembleResult);
+            NSData *writtenData = [NSData dataWithContentsOfURL:targetURL];
+            XCTAssertEqualObjects(data, writtenData);
+        }];
+    }];
+}
+
+- (void)testURLPartitioningWithHelpers
+{
+    NSData *data = [[CryptoKitEngine sharedInstance] randomBytesWithLength:1024 * 1024 * 32 + 17];
+    [self withTemporaryFileURL:data callback:^(NSURL *sourceURL) {
+        [self withTemporaryFileURL:nil callback:^(NSURL *targetURL) {
+            [self withTemporaryDirectoryURL:^(NSURL *intermediateDirectoryURL) {
+                NSError *error, *handlerError, *providerError;
+                CKChunkHandler chunkHandler = CKChunkHandlerForFilesInDirectory(intermediateDirectoryURL, &handlerError);
+                XCTAssertNotNil(chunkHandler);
+                BOOL disassembleResult = [sourceURL disassembleFromURLWithpartitionStrategy:CKPartitionStrategyRandom
+                                                                                   password:CryptoKitPassword
+                                                                               chunkHandler:chunkHandler
+                                                                                      error:&error];
+                XCTAssertTrue(disassembleResult);
+                XCTAssertNil(handlerError);
+                CKChunkProvider chunkProvider = CKChunkProviderForFilesInDirectory(intermediateDirectoryURL, &providerError);
+                XCTAssertNotNil(chunkProvider);
+                BOOL assembleResult = [targetURL assembleToURLWithPassword:CryptoKitPassword
+                                                             chunkProvider:chunkProvider
+                                                                     error:&error];
+                XCTAssertTrue(assembleResult);
+                XCTAssertNil(providerError);
+                NSData *writtenData = [NSData dataWithContentsOfURL:targetURL];
+                XCTAssertEqualObjects(data, writtenData);
+            }];
+        }];
+    }];
+}
+
+- (void)testURLPartitioningFailure
+{
+    NSData *data = [[CryptoKitEngine sharedInstance] randomBytesWithLength:1024 * 1024 * 32 + 17];
+    [self withTemporaryFileURL:data callback:^(NSURL *sourceURL) {
+        [self withTemporaryFileURL:nil callback:^(NSURL *targetURL) {
+            [self withTemporaryDirectoryURL:^(NSURL *intermediateDirectoryURL) {
+                NSError *error, *handlerError, *providerError;
+                [sourceURL disassembleFromURLWithpartitionStrategy:CKPartitionStrategyRandom
+                                                          password:CryptoKitPassword
+                                                      chunkHandler:(CKChunkHandler)CKChunkHandlerForFilesInDirectory(intermediateDirectoryURL, &handlerError)
+                                                             error:&error];
+                BOOL assembleResult = [targetURL assembleToURLWithPassword:@"wrong password"
+                                                             chunkProvider:(CKChunkProvider)CKChunkProviderForFilesInDirectory(intermediateDirectoryURL, &providerError)
+                                                                     error:&error];
+                XCTAssertFalse(assembleResult);
+                XCTAssertNotNil(error);
+            }];
+        }];
+    }];
+}
+
 #pragma mark - Integration
 
 - (void)testEncryptionIntegrity

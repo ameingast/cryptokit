@@ -44,6 +44,35 @@ const NSUInteger CryptoKitDataBlobSize = 1024 * 256 + 137;
     }
 }
 
+- (void)withTemporaryDirectoryURL:(void (^)(NSURL *url))callback
+{
+    NSURL *url = nil;
+    @try {
+        NSError *error;
+        NSString *uuid = [[NSUUID UUID] UUIDString];
+        NSString *tmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:uuid];
+        url = [NSURL fileURLWithPath:tmpPath];
+        BOOL result = [[NSFileManager defaultManager] createDirectoryAtURL:url
+                                               withIntermediateDirectories:YES
+                                                                attributes:nil
+                                                                     error:&error];
+        if (result) {
+            callback(url);
+        } else {
+            XCTFail(@"Unable to create temporary directory: %@", error);
+        }
+    } @finally {
+        if (url) {
+            NSError *error;
+            BOOL removeResult = [[NSFileManager defaultManager] removeItemAtURL:url
+                                                                          error:&error];
+            if (!removeResult) {
+                XCTFail(@"Unable to clean up temporary file at: %@ - %@", url, error);
+            }
+        }
+    }
+}
+
 - (void)withInputStream:(NSData *)content
                callback:(void (^)(NSInputStream *inputStream))callback
 {

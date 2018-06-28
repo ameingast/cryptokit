@@ -66,7 +66,7 @@ pod 'CryptoKit', :git => 'https://github.com/ameingast/cryptokit.git'
 To use [Carthage](https://github.com/Carthage/Carthage) (a more lightweight but more hands on package manager) just create a `Cartfile` with
 
 ```ruby                                                                         
-github "ameingast/cryptokit" ~> 1.4.0                                   
+github "ameingast/cryptokit" ~> 1.5.0                                   
 ```                                        
 
 Then follow the [steps in the Carthage guide](https://github.com/Carthage/Carthage#getting-started) basically:
@@ -164,7 +164,7 @@ class which provides convience functions for stream-based encryption and stream-
     NSError *error = nil;
     NSURL *sourceURL = [NSURL fileURLWithPath:@"plain"]; // replace with real data
     NSURL *targetURL = [NSURL fileURLWithPath:@"encrypted"]; // replace with real data
-    BOOL result = [sourceURL encryptedURLWithPassword:CryptoKitPassword targetURL:targetURL error:&error];
+    BOOL result = [sourceURL encryptedURLWithPassword:@"secret" targetURL:targetURL error:&error];
     if (result) {
         // encrypted data written to targetURL
     } else {
@@ -177,7 +177,7 @@ class which provides convience functions for stream-based encryption and stream-
     NSError *error = nil;
     NSURL *sourceURL = [NSURL fileURLWithPath:@"encrypted"]; // replace with real data
     NSURL *targetURL = [NSURL fileURLWithPath:@"plain"]; // replace with real data
-    BOOL result = [sourceURL decryptedURLWithPassword:CryptoKitPassword targetURL:targetURL error:&error];
+    BOOL result = [sourceURL decryptedURLWithPassword:@"secret" targetURL:targetURL error:&error];
     if (result) {
         // decrypted data written to targetURL
     } else {
@@ -244,6 +244,46 @@ class which provides convience functions for stream-based encryption and stream-
     NSURL *url = [NSURL new]; // replace with real data
     NSString *hashInHumanReadableForm = [url md5HexHash:&error];
     if (hashInHumanReadableForm) {
+        // ...
+    } else {
+        // deal with error
+    }
+}
+```
+
+#### Partitioning
+```objective-c
+
+#import <CryptoKit/CryptoKit.h>
+
+- (void)encryptAndPartitionData:(NSURL *)dataURL
+                    toDirectory:(NSURL *)directoryURL
+{
+    NSError *error, *handlerError;
+    BOOL result = [dataURL disassembleFromURLWithpartitionStrategy:CKPartitionStrategyRandom
+                                                          password:@"secret"
+                                                      chunkHandler:CKChunkHandlerForFilesInDirectory(directoryURL, &handlerError);
+                                                             error:&error];
+    if (result) {
+        // ...
+    } else {
+        // deal with error
+    }
+}
+```
+
+```objective-c
+
+#import <CryptoKit/CryptoKit.h>
+
+- (void)decryptPartitionedDataFromDirectory:(NSURL *)directoryURL
+                                  toDataURL:(NSURL *)dataURL
+{
+    NSError *error, *providerError;
+    BOOL result = [dataURL assembleToURLWithPassword:@"secret"
+                                       chunkProvider:CKChunkProviderForFilesInDirectory(directoryURL, &providerError);
+                                               error:&error];
+    if (result) {
         // ...
     } else {
         // deal with error

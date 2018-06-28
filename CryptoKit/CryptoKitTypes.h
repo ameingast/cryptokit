@@ -16,6 +16,27 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const CryptoKitErrorDomain;
 
 /**
+ * A function type for handling encrypted, partitioned data.
+ */
+typedef BOOL (^CKChunkHandler)(NSData *chunk);
+
+/**
+ * A function type that provides encrypted, partitioned data for de-partitioning and decryption.
+ */
+typedef NSData * __nullable (^CKChunkProvider)(void);
+
+/**
+ * A CKChunkHandler helper function that persists all provided chunks into the given directory
+ * as separate files. The filename starts with CK-
+ */
+__nullable CKChunkHandler CKChunkHandlerForFilesInDirectory(NSURL *directory, NSError *__nullable *error);
+
+/**
+ * A CKChunkProvider that reads all files that match CK-* in the given directory.
+ */
+__nullable CKChunkProvider CKChunkProviderForFilesInDirectory(NSURL *directory, NSError *__nullable *error);
+
+/**
  * Unique identifiers for digests used in digest batch-operations.
  */
 typedef NS_ENUM(NSUInteger, CryptoKitDigestType) {
@@ -50,6 +71,17 @@ typedef NS_ENUM(NSInteger, CryptoKitErrorCode) {
 };
 
 /**
+ * Defines the partition strategy used for generating file chunks.
+ *
+ * * CKPartitionStrategyFixed - All partitions are equally sized
+ * * CKPartitionStrategyRandom - The size of each partition is random
+ */
+typedef NS_ENUM(NSInteger, CKPartitionStrategy) {
+    CKPartitionStrategyFixed,
+    CKPartitionStrategyRandom
+};
+
+/**
  * Calculates the digest byte length of the provided digest-type.
  */
 NSUInteger CryptoKitDigestTypeSize(CryptoKitDigestType type);
@@ -58,6 +90,11 @@ NSUInteger CryptoKitDigestTypeSize(CryptoKitDigestType type);
  * Converts the provided cc-error number into a human-readable format.
  */
 NSString *NSStringFromCCStatus(int32_t status);
+
+/**
+ * Creates a mutable data buffer for the provided CKPartitionStrategy.
+ */
+NSMutableData * __nullable NSMutableDataForPartitionStrategy(CKPartitionStrategy partitionStrategy);
 
 /**
  * Contains the result of a digest-batch operation.

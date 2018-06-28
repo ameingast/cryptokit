@@ -6,16 +6,10 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-#import <CryptoKit/NSInputStream+CryptoKit.h>
 #import <CryptoKit/NSStream+CryptoKit.h>
-
-#pragma mark - Helpers
-
-@interface NSStream (CryptoKitPrivate)
-
-- (id)withOpenStream:(id (^)(void))callback;
-
-@end
+#import <CryptoKit/NSInputStream+CryptoKit.h>
+#import <CryptoKit/NSOutputStream+CryptoKit.h>
+#import "NSStream+CryptoKitPrivate.h"
 
 @implementation NSStream (CryptoKit)
 
@@ -25,7 +19,7 @@
                             error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream md2Hash:error];
+        return [inputStream md2Hash:error];
     }];
     return result;
 }
@@ -34,7 +28,7 @@
                                  error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream md2HexHash:error];
+        return [inputStream md2HexHash:error];
     }];
     return result;
 }
@@ -43,7 +37,7 @@
                             error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream md4Hash:error];
+        return [inputStream md4Hash:error];
     }];
     return result;
 }
@@ -52,7 +46,7 @@
                                  error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream md4HexHash:error];
+        return [inputStream md4HexHash:error];
     }];
     return result;
 }
@@ -61,7 +55,7 @@
                             error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream md5Hash:error];
+        return [inputStream md5Hash:error];
     }];
     return result;
 }
@@ -70,7 +64,7 @@
                                  error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream md5HexHash:error];
+        return [inputStream md5HexHash:error];
     }];
     return result;
 }
@@ -79,7 +73,7 @@
                              error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream sha1Hash:error];
+        return [inputStream sha1Hash:error];
     }];
     return result;
 }
@@ -88,7 +82,7 @@
                                   error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream sha1HexHash:error];
+        return [inputStream sha1HexHash:error];
     }];
     return result;
 }
@@ -97,7 +91,7 @@
                                error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream sha224Hash:error];
+        return [inputStream sha224Hash:error];
     }];
     return result;
 }
@@ -106,7 +100,7 @@
                                     error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream sha224HexHash:error];
+        return [inputStream sha224HexHash:error];
     }];
     return result;
 }
@@ -115,7 +109,7 @@
                                error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream sha384Hash:error];
+        return [inputStream sha384Hash:error];
     }];
     return result;
 }
@@ -124,7 +118,7 @@
                                     error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream sha384HexHash:error];
+        return [inputStream sha384HexHash:error];
     }];
     return result;
 }
@@ -133,7 +127,7 @@
                                error:(NSError *__autoreleasing *)error
 {
     NSData *result = [inputStream withOpenStream:^{
-      return [inputStream sha512Hash:error];
+        return [inputStream sha512Hash:error];
     }];
     return result;
 }
@@ -142,15 +136,15 @@
                                     error:(NSError *__autoreleasing *)error
 {
     NSString *result = [inputStream withOpenStream:^{
-      return [inputStream sha512HexHash:error];
+        return [inputStream sha512HexHash:error];
     }];
     return result;
 }
 
 + (CKDigestBatchResult *)hashesForInputStream:(NSInputStream *)inputStream
-                                                                error:(NSError *__autoreleasing *)error
+                                        error:(NSError *__autoreleasing *)error
 {
-    CKDigestBatchResult *result = [inputStream withOpenStream:^id{
+    CKDigestBatchResult *result = [inputStream withOpenStream:^id {
         return [inputStream hashes:error];
     }];
     return result;
@@ -165,13 +159,13 @@
 {
     BOOL __block result = NO;
     [inputStream withOpenStream:^id {
-      [outputStream withOpenStream:^id {
-        result = [inputStream encryptWithPassword:password
-                                         toStream:outputStream
-                                            error:error];
+        [outputStream withOpenStream:^id {
+            result = [inputStream encryptWithPassword:password
+                                             toStream:outputStream
+                                                error:error];
+            return nil;
+        }];
         return nil;
-      }];
-      return nil;
     }];
     return result;
 }
@@ -183,13 +177,13 @@
 {
     BOOL __block result = NO;
     [inputStream withOpenStream:^id {
-      [outputStream withOpenStream:^id {
-        result = [inputStream decryptWithPassword:password
-                                         toStream:outputStream
-                                            error:error];
+        [outputStream withOpenStream:^id {
+            result = [inputStream decryptWithPassword:password
+                                             toStream:outputStream
+                                                error:error];
+            return nil;
+        }];
         return nil;
-      }];
-      return nil;
     }];
     return result;
 }
@@ -202,38 +196,49 @@
 {
     BOOL __block result = NO;
     [inputStream withOpenStream:^id {
-      [outputStream withOpenStream:^id {
-        result = [inputStream recryptWithPassword:password
-                                      newPassword:newPassword
-                                         toStream:outputStream
-                                            error:error];
+        [outputStream withOpenStream:^id {
+            result = [inputStream recryptWithPassword:password
+                                          newPassword:newPassword
+                                             toStream:outputStream
+                                                error:error];
+            return nil;
+        }];
+        return nil; // FIXME
+    }];
+    return result;
+}
+
++ (BOOL)disassembleFromInputStream:(NSInputStream *)inputStream
+                 partitionStrategy:(CKPartitionStrategy)partitionStrategy
+                          password:(NSString *)password
+                      chunkHandler:(CKChunkHandler)chunkHandler
+                             error:(NSError *__autoreleasing *)error
+{
+    BOOL __block result;
+    [inputStream withOpenStream:^id {
+        result = [inputStream disassembleWithpartitionStrategy:partitionStrategy
+                                                      password:password
+                                                  chunkHandler:chunkHandler
+                                                         error:error];
         return nil;
-      }];
-      return nil; // FIXME
+    }];
+    return result;
+}
+
++ (BOOL)assembleToOutputStream:(NSOutputStream *)outputStream
+                      password:(NSString *)password
+                 chunkProvider:(CKChunkProvider)chunkProvider
+                         error:(NSError *__autoreleasing *)error
+{
+    BOOL __block result;
+    [outputStream withOpenStream:^id {
+        result = [outputStream assembleWithPassword:password
+                                      chunkProvider:chunkProvider
+                                              error:error];
+        return nil;
     }];
     return result;
 }
 
 @end
 
-#pragma mark - Helpers
-
-@implementation NSStream (CryptoKitPrivate)
-
-- (id)withOpenStream:(id (^)(void))callback
-{
-    NSStreamStatus initialStatus = [self streamStatus];
-    @try {
-        if ([self streamStatus] == NSStreamStatusNotOpen) {
-            [self open];
-        }
-        id result = callback();
-        return result;
-    } @finally {
-        if (initialStatus == NSStreamStatusNotOpen) {
-            [self close];
-        }
-    }
-}
-
-@end

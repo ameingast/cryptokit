@@ -23,4 +23,20 @@
     *outputStream = CFBridgingRelease(writeStream);
 }
 
+- (id)withOpenStream:(id (^)(void))callback
+{
+    NSStreamStatus initialStatus = [self streamStatus];
+    @try {
+        if ([self streamStatus] == NSStreamStatusNotOpen) {
+            [self open];
+        }
+        id result = callback();
+        return result;
+    } @finally {
+        if (initialStatus == NSStreamStatusNotOpen) {
+            [self close];
+        }
+    }
+}
+
 @end

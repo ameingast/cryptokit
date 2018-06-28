@@ -25,18 +25,13 @@
                                            reason:@"Write operation on output-stream failed"
                                          userInfo:@{ @"errorCode": @(CryptoKitIOError) }];
         } else if (bytesWritten == 0) {
-            [self waitForSpace];
+            while (![self hasSpaceAvailable]) {
+                // TODO: replace with event based solution
+                [NSThread sleepForTimeInterval:0.1];
+            }
         } else {
             totalBytesWritten += (NSUInteger)bytesWritten;
         }
-    }
-}
-
-- (void)waitForSpace
-{
-    while (![self hasSpaceAvailable]) {
-        // TODO: replace with event based solution
-        [NSThread sleepForTimeInterval:0.1];
     }
 }
 

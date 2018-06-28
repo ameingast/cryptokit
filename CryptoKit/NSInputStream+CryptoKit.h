@@ -6,9 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
-@class CKDigestBatchResult;
+#import <CryptoKit/CryptoKitTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -120,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
                       error:(NSError *__nullable *)error;
 
 /**
- * Decrypt the contents of the NSInputStream instance using a given password and encrypt the result with newPassword 
+ * Decrypt the contents of the NSInputStream instance using a given password and encrypt the result with newPassword
  * to outputStream.
  *
  * This method works especially well for large amounts of streamable data.
@@ -132,6 +130,20 @@ NS_ASSUME_NONNULL_BEGIN
                 newPassword:(NSString *)newPassword
                    toStream:(NSOutputStream *)outputStream
                       error:(NSError *__nullable *)error;
+
+#pragma mark - Partitioning
+
+/**
+ * Partition and encrypt the contents of the NSInputStream using a given password. chunkHandler is called exactly once
+ * for each created chunk.
+ *
+ * @warning     This method will block the current thread until all data from the inputStream instance is consumed,
+ *              chunked, encrypted and passed on to chunkHandler or an error has occured.
+ */
+- (BOOL)disassembleWithpartitionStrategy:(CKPartitionStrategy)partitionStrategy
+                                password:(NSString *)password
+                            chunkHandler:(CKChunkHandler)chunkHandler
+                                   error:(NSError *__nullable *)error;
 
 @end
 

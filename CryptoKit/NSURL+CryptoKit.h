@@ -6,9 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
-@class CKDigestBatchResult;
+#import <CryptoKit/CryptoKitTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -124,6 +122,31 @@ NS_ASSUME_NONNULL_BEGIN
                      newPassword:(NSString *)newPassword
                        targetURL:(NSURL *)targetURL
                            error:(NSError *__nullable *)error;
+
+#pragma mark - Partitioning
+
+/**
+ * Partition and encrypt the contents of the NSURL using a given password. chunkHandler is called exactly once
+ * for each created chunk.
+ *
+ * @warning     This method will block the current thread until all data from the NSURL instance is consumed,
+ *              chunked, encrypted and passed on to chunkHandler or an error has occured.
+ */
+- (BOOL)disassembleFromURLWithpartitionStrategy:(CKPartitionStrategy)partitionStrategy
+                                       password:(NSString *)password
+                                   chunkHandler:(CKChunkHandler)chunkHandler
+                                          error:(NSError *__nullable *)error;
+
+/**
+ * Decrypts and assembles all provided chunks using the provided password. Writes to this NSURL instance.
+ *
+ * Assembly is stopped when chunkProvider returns nil.
+ *
+ * @warning     This method will block the current thread until chunkProvider returns nil or an error has occured.
+ */
+- (BOOL)assembleToURLWithPassword:(NSString *)password
+                    chunkProvider:(CKChunkProvider)chunkProvider
+                            error:(NSError *__nullable *)error;
 
 @end
 

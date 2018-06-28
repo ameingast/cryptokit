@@ -195,7 +195,7 @@
 - (BOOL)recryptWithPassword:(NSString *)password
                 newPassword:(NSString *)newPassword
                    toStream:(NSOutputStream *)outputStream
-                      error:(NSError *__nullable __autoreleasing *)error
+                      error:(NSError *__autoreleasing *)error
 
 {
     BOOL result = [self.engine recryptInputStream:self
@@ -204,6 +204,18 @@
                                       newPassword:newPassword
                                             error:error];
     return result;
+}
+
+- (BOOL)disassembleWithpartitionStrategy:(CKPartitionStrategy)partitionStrategy
+                                password:(NSString *)password
+                            chunkHandler:(CKChunkHandler)chunkHandler
+                                   error:(NSError *__autoreleasing *)error
+{
+    return [self.engine disassembleFromInputStream:self
+                                 partitionStrategy:partitionStrategy
+                                          password:password
+                                      chunkHandler:chunkHandler
+                                             error:error];
 }
 
 @end

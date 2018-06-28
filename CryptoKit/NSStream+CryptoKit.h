@@ -6,9 +6,7 @@
 //  Copyright © 2016 Andreas Meingast. All rights reserved.
 //
 
-@import Foundation;
-
-@class CKDigestBatchResult;
+#import <CryptoKit/CryptoKitTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -147,6 +145,27 @@ NS_ASSUME_NONNULL_BEGIN
                   password:(NSString *)password
                newPassword:(NSString *)newPassword
                      error:(NSError *__nullable *)error;
+
+#pragma mark - Partitioning
+
+/**
+ * A convenience method for partitioning the contents of inputStreams without having to open or close the stream
+ * manually.
+ */
++ (BOOL)disassembleFromInputStream:(NSInputStream *)inputStream
+                 partitionStrategy:(CKPartitionStrategy)partitionStrategy
+                          password:(NSString *)password
+                      chunkHandler:(CKChunkHandler)chunkHandler
+                             error:(NSError *__nullable *)error;
+
+/**
+ * A convenience method for assembling partitioned file-chunks without having to open or close the stream manually.
+ */
++ (BOOL)assembleToOutputStream:(NSOutputStream *)outputStream
+                      password:(NSString *)password
+                 chunkProvider:(CKChunkProvider)chunkProvider
+                         error:(NSError *__nullable *)error;
+
 @end
 
 NS_ASSUME_NONNULL_END
