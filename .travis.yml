@@ -1,4 +1,4 @@
-osx_image: xcode9
+osx_image: xcode9.4
 language: objective-c
 script:
   - xcodebuild -configuration Release -scheme CryptoKit\ \(macOS\ Framework\) clean build test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" ENABLE_TESTABILITY=YES
