@@ -7,9 +7,9 @@
     "license": { "type": "BSD3", "file": "LICENSE" },
     "authors": { "Andreas Meingast": "ameingast@gmail.com" },
     "source": { "git": "https://github.com/ameingast/cryptokit.git", "tag": "1.5.0" },
-    "platforms": { "osx": "10.6", "ios": "8.0", "tvos": "9.0", "watchos": "2.0" },
+    "platforms": { "osx": "10.8", "ios": "8.0", "tvos": "9.0", "watchos": "2.0" },
     "requires_arc": true,
     "frameworks": [ "Foundation" ],
     "source_files": "CryptoKit/*.{h,m}",
-    "public_header_files": [ "CryptoKit/{CryptoKit,CryptoKitErrors,NSData+CryptoKit,NSInputStream+CryptoKit,NSStream+CryptoKit,NSString+CryptoKit,NSURL+CryptoKit}.h" ]
+    "public_header_files": [ "CryptoKit/{CryptoKit,CryptoKitTypes,CryptoKitErrors,NSData+CryptoKit,NSInputStream+CryptoKit,NSOutputStream+CryptoKit,NSStream+CryptoKit,NSString+CryptoKit,NSURL+CryptoKit}.h" ]
 }

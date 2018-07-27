@@ -51,7 +51,7 @@ Encryption and decryption rely on a custom data format providing means to ensure
 CryptoKit requires at least: 
 
 * iOS 8.0
-* macOS 10.6
+* macOS 10.8
 * tvOS 9.0
 * watchOS 2.0
 
