@@ -5,6 +5,7 @@
 [![codecov](http://codecov.io/github/ameingast/cryptokit/coverage.svg?branch=master)](http://codecov.io/github/ameingast/cryptokit?branch=master)
 [![license](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ![platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-blue.svg?longCache=true&style=flat)
+[![donate](https://img.shields.io/badge/donate-paypal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E5NS7AQG7EN8J)
 
 Welcome to *CryptoKit*, a framework making cryptography easier and safer on macOS, iOS, tvOS and watchOS.
 
@@ -363,7 +364,7 @@ This project uses conservative compiler settings and a clang-format profile.
 
 Please be sure that no compiler warnings occur before sending patches or pull requests upstream. 
 
-Thank you!
+If you like this library, please consider donating. Thank you!
 
 ## Copyright and Licensing
 
