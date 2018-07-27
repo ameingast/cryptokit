@@ -1,7 +1,7 @@
 # CryptoKit
 
 [![build status](https://api.travis-ci.org/ameingast/cryptokit.png)](https://travis-ci.org/ameingast/cryptokit)
-[![carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![codecov](http://codecov.io/github/ameingast/cryptokit/coverage.svg?branch=master)](http://codecov.io/github/ameingast/cryptokit?branch=master)
 [![license](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ![platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-blue.svg?longCache=true&style=flat)
