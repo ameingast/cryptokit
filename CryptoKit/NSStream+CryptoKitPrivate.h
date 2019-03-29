@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSStream (CryptoKitPrivate)
 
-+ (void)createBoundInputStream:(NSInputStream **__nullable)inputStream
-                  outputStream:(NSOutputStream **__nullable)outputStream
++ (void)createBoundInputStream:(NSInputStream *_Nonnull *__nullable)inputStream
+                  outputStream:(NSOutputStream *_Nonnull *__nullable)outputStream
                     bufferSize:(int32_t)bufferSize;
 
 - (id)withOpenStream:(id (^)(void))callback;
