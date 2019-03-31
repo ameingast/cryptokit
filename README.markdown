@@ -70,7 +70,7 @@ pod 'CryptoKit', :git => 'https://github.com/ameingast/cryptokit.git'
 To use [Carthage](https://github.com/Carthage/Carthage) (a more lightweight but more hands on package manager) just create a `Cartfile` with
 
 ```ruby                                                                         
-github "ameingast/cryptokit" ~> 1.5.0                                   
+github "ameingast/cryptokit" ~> 1.6.0                                   
 ```                                        
 
 Then follow the [steps in the Carthage guide](https://github.com/Carthage/Carthage#getting-started) basically:
